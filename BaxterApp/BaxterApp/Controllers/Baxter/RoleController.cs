@@ -37,7 +37,7 @@ namespace Baxter.Controllers
 
         [HttpPost, AuthorizeFunction(FunctionName.User, Permission.Delete)]
         public override JsonNetResult Delete(List<int> IDs)
-        {
+        {            
             if (db.Users.Any(u => IDs.Contains(u.RoleID))) return JsonNet.JsonError(Resources.Global.Error_UserWithDeletedRole);
             return base.Delete(IDs);
         }

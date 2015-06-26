@@ -795,4 +795,7 @@
   <data name="General_Backups" xml:space="preserve">
     <value>Backups</value>
   </data>
+  <data name="General_Application" xml:space="preserve">
+    <value>Applicatie</value>
+  </data>
 </root>

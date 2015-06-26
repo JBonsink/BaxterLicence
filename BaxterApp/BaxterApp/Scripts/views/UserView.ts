@@ -84,7 +84,7 @@ class UserView {
 
                     var childTable = kTable.Utilities.addEntityLogField({ UseLog: userLogField }, logActions, logFields, "Name", 1);
 
-                    var userOptions = kTable.Utilities.createOptions({
+                    var userOptions = kTable.Utilities.createOptions({                        
                         title: Resources.Global.General_Users,
                         actions: userActions,
                         fields: $.extend(childTable, userFields),

@@ -35,6 +35,8 @@ namespace Baxter.Constants
         [LocalizedDescription("General_Backup")]
         Backup = 7,
         [LocalizedDescription("General_AppLog")]
-        AppLog
+        AppLog = 8,
+        [LocalizedDescription("General_Application")]
+        Application = 9
     }
 }

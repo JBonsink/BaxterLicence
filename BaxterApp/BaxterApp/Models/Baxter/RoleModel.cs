@@ -35,7 +35,10 @@ namespace Baxter.Models
         public Permission SettingsAccess { get; set; }
 
         [LocalizedDescription("General_Maintenance"), Range(0, 4), JtableVisibility(JTableVisibility.Hidden)]
-        public Permission MaintenanceAccess { get; set; }                
+        public Permission MaintenanceAccess { get; set; }
+
+        [LocalizedDescription("General_Application"), Range(0, 4), JtableVisibility(JTableVisibility.Hidden)]
+        public Permission ApplicationAccess { get; set; }                
 
         public virtual ICollection<User> Users { get; set; }
     }          

@@ -22,6 +22,7 @@ namespace Baxter.Contexts
         public DbSet<BackupSettings> BackupSettings { get; set; }
         public DbSet<Backup> Backups { get; set; }
         public DbSet<AppLog> AppLogs { get; set; }
+        public DbSet<Application> Applications { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {             

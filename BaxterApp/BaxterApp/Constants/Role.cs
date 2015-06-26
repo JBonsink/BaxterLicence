@@ -12,7 +12,8 @@ namespace Baxter.Constants
         Role,
         User,        
         Settings,
-        Maintenance
+        Maintenance,
+        Application
     }           
 
     [TsEnum]

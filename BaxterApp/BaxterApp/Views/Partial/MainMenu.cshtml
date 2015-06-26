@@ -16,10 +16,16 @@
     <!--<li>@Html.ActionLink(Resources.Global.General_Home, "Index", "Home")</li>-->
     @if (ViewBag.ViewUser)
     {
+        if (ViewBag.ViewApplication)
+        {
+            <li>
+                <a href="@Url.Action("Index", "Application")"><i class="fa fa-coffee"></i> @Resources.Global.General_Application</a>
+            </li>
+        }
         <li data-toggle="collapse" data-target="#users" class="collapsed active">
             <a href="#"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users<span class="arrow"></span></a>
         </li>
-        <ul class="sub-menu collapse" id="users">
+        <ul class="sub-menu collapse" id="users">            
             @if (ViewBag.ViewUser)
             {
                 <li><a href="@Url.Action("Index", "User")"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users</a></li>

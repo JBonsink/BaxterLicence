@@ -299,5 +299,7 @@ var Resources = {
     Backup_RestoreWarning: 'Weet je zeker dat je de geselecteerde backup wil terugzetten?',
     Language_Dutch: 'Nederlands',
     Language_English: 'Engels',
+    General_Backups: 'Backups',
+    General_Application: 'Applicatie',
 	}
 };

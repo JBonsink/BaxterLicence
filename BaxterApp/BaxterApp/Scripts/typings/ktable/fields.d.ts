@@ -8,6 +8,10 @@
  
 
 declare module Baxter.Fields {
+	interface Application {
+		ID: kTable.Field<Baxter.Models.Application>;
+		Name: kTable.Field<Baxter.Models.Application>;
+	}
 	interface AppLog {
 		ID: kTable.Field<Baxter.Models.AppLog>;
 		Type: kTable.Field<Baxter.Models.AppLog>;
@@ -51,6 +55,11 @@ declare module Baxter.Fields {
 		EntityName: kTable.Field<Baxter.Models.Log>;
 		Timestamp: kTable.Field<Baxter.Models.Log>;
 	}
+	interface Response {
+		Success: kTable.Field<Baxter.Models.Response>;
+		Message: kTable.Field<Baxter.Models.Response>;
+		Data: kTable.Field<Baxter.Models.Response>;
+	}
 	interface Role {
 		ID: kTable.Field<Baxter.Models.Role>;
 		Name: kTable.Field<Baxter.Models.Role>;
@@ -59,6 +68,7 @@ declare module Baxter.Fields {
 		UserAccess: kTable.Field<Baxter.Models.Role>;
 		SettingsAccess: kTable.Field<Baxter.Models.Role>;
 		MaintenanceAccess: kTable.Field<Baxter.Models.Role>;
+		ApplicationAccess: kTable.Field<Baxter.Models.Role>;
 		Users: kTable.Field<Baxter.Models.Role>;
 	}
 	interface User {

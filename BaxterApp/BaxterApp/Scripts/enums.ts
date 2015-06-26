@@ -54,7 +54,8 @@ module Baxter.Constants {
 		FileModel = 5,
 		BackupSettings = 6,
 		Backup = 7,
-		AppLog = 8
+		AppLog = 8,
+		Application = 9
 	}
 	export enum Permission {
 		None = 0,

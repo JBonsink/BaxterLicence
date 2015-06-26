@@ -41,7 +41,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="dotless.Core">
-      <HintPath>..\packages\dotless.1.4.1.0\lib\dotless.Core.dll</HintPath>
+      <HintPath>..\packages\dotless.1.5.0\lib\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.2\lib\net45\EntityFramework.dll</HintPath>
@@ -57,17 +57,14 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.DocumentObjectModel-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ProjectFlash\ProjectFlash\Libs\MigraDoc.DocumentObjectModel-WPF.dll</HintPath>
+    <Reference Include="MigraDoc.DocumentObjectModel">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.DocumentObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.Rendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ProjectFlash\ProjectFlash\Libs\MigraDoc.Rendering-WPF.dll</HintPath>
+    <Reference Include="MigraDoc.Rendering">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.Rendering.dll</HintPath>
     </Reference>
-    <Reference Include="MigraDoc.RtfRendering-WPF, Version=1.32.3885.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ProjectFlash\ProjectFlash\Libs\MigraDoc.RtfRendering-WPF.dll</HintPath>
+    <Reference Include="MigraDoc.RtfRendering">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\MigraDoc.RtfRendering.dll</HintPath>
     </Reference>
     <Reference Include="MoreLinq">
       <HintPath>..\packages\morelinq.1.1.0\lib\net35\MoreLinq.dll</HintPath>
@@ -83,13 +80,11 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Libs\PdfPrintingNet.dll</HintPath>
     </Reference>
-    <Reference Include="PdfSharp-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ProjectFlash\ProjectFlash\Libs\PdfSharp-WPF.dll</HintPath>
+    <Reference Include="PdfSharp">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
-    <Reference Include="PdfSharp.Charting-WPF, Version=1.32.2608.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\ProjectFlash\ProjectFlash\Libs\PdfSharp.Charting-WPF.dll</HintPath>
+    <Reference Include="PdfSharp.Charting">
+      <HintPath>..\packages\PDFsharp-MigraDoc-GDI.1.32.4334.0\lib\net20\PdfSharp.Charting.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
@@ -498,10 +493,10 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="packages.config" />
-    <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="Views\Drive\Index.cshtml" />
     <Content Include="Views\Backup\Index.cshtml" />
     <Content Include="Views\AppLog\Index.cshtml" />
+    <Content Include="Views\Application\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -607,6 +602,7 @@
     <Compile Include="Constants\Log.cs" />
     <Compile Include="Constants\Role.cs" />
     <Compile Include="Contexts\BaxterContext.cs" />
+    <Compile Include="Controllers\Baxter\ApplicationController.cs" />
     <Compile Include="Controllers\Baxter\AppLogController.cs" />
     <Compile Include="Controllers\Baxter\BackupSettingsController.cs" />
     <Compile Include="Controllers\Baxter\AccountController.cs" />
@@ -718,7 +714,16 @@
     <Compile Include="Migrations\201501220843345_AppLogSeen.Designer.cs">
       <DependentUpon>201501220843345_AppLogSeen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506261124440_Applications.cs" />
+    <Compile Include="Migrations\201506261124440_Applications.Designer.cs">
+      <DependentUpon>201506261124440_Applications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506261130575_applicationAcc.cs" />
+    <Compile Include="Migrations\201506261130575_applicationAcc.Designer.cs">
+      <DependentUpon>201506261130575_applicationAcc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Baxter\Application.cs" />
     <Compile Include="Models\Baxter\ApplicationLog.cs" />
     <Compile Include="Models\Baxter\BackupModel.cs" />
     <Compile Include="Models\Baxter\BackupSettingsModel.cs" />
@@ -824,6 +829,12 @@
     <EmbeddedResource Include="Migrations\201501220843345_AppLogSeen.resx">
       <DependentUpon>201501220843345_AppLogSeen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506261124440_Applications.resx">
+      <DependentUpon>201506261124440_Applications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506261130575_applicationAcc.resx">
+      <DependentUpon>201506261130575_applicationAcc.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -845,6 +856,7 @@
     <TypeScriptCompile Include="Scripts\typings\tagsinput\tagsinput.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\typeahead\typeahead.d.ts" />
     <TypeScriptCompile Include="Scripts\utilities\utilities.ts" />
+    <TypeScriptCompile Include="Scripts\views\ApplicationView.ts" />
     <TypeScriptCompile Include="Scripts\views\ApplogView.ts" />
     <TypeScriptCompile Include="Scripts\views\BackupView.ts" />
     <TypeScriptCompile Include="Scripts\views\DriveView.ts" />

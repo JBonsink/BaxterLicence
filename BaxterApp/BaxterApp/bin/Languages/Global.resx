@@ -799,4 +799,7 @@
   <data name="Language_English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="General_Application" xml:space="preserve">
+    <value>Application</value>
+  </data>
 </root>

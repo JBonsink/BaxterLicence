@@ -8,6 +8,10 @@
  
 
 declare module Baxter.Models {
+	interface Application {
+		ID: number;
+		Name: string;
+	}
 	interface AppLog {
 		ID: number;
 		Type: Baxter.Constants.AppLogType;
@@ -51,6 +55,11 @@ declare module Baxter.Models {
 		EntityName: string;
 		Timestamp: Date;
 	}
+	interface Response {
+		Success: boolean;
+		Message: string;
+		Data: any;
+	}
 	interface Role {
 		ID: number;
 		Name: string;
@@ -59,6 +68,7 @@ declare module Baxter.Models {
 		UserAccess: Baxter.Constants.Permission;
 		SettingsAccess: Baxter.Constants.Permission;
 		MaintenanceAccess: Baxter.Constants.Permission;
+		ApplicationAccess: Baxter.Constants.Permission;
 		Users: Baxter.Models.User[];
 	}
 	interface User {

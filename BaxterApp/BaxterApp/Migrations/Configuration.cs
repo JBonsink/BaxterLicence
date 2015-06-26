@@ -25,19 +25,19 @@ namespace Baxter.Migrations
 
         protected override void Seed(BaxterContext context)
         {
-            AddRole("Administrator");
-            AddUser("admin@baxter.nl", "admin", "admin", 1);
+        //    AddRole("Administrator");
+        //    AddUser("admin@baxter.nl", "admin", "admin", 1);
 
-            db.BackupSettings.Add(new Baxter.Models.BackupSettings()
-            {
-                BackupPath = @"C:\Backups",
-                BackupSchedule = 15,
-                BackupTTLWeeks = 52,
-                MinFreeSpaceGB = 8,
-                Time = "00:00"
-            });
-            db.SaveChanges();
-            db.Dispose();
+        //    db.BackupSettings.Add(new Baxter.Models.BackupSettings()
+        //    {
+        //        BackupPath = @"C:\Backups",
+        //        BackupSchedule = 15,
+        //        BackupTTLWeeks = 52,
+        //        MinFreeSpaceGB = 8,
+        //        Time = "00:00"
+        //    });
+        //    db.SaveChanges();
+        //    db.Dispose();
         }
 
         private void AddUser(string email, string username, string password, int roleID)

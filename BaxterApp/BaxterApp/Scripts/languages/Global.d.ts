@@ -229,5 +229,6 @@
     Backup_RestoreWarning: string;
     Language_Dutch: string;
     Language_English: string;
+    General_Application: string;
 	}
 }

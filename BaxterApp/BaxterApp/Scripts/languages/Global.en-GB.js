@@ -303,5 +303,6 @@ var Resources = {
     Backup_RestoreWarning: 'Are you sure you wish to restore to the selected backup?',
     Language_Dutch: 'Dutch',
     Language_English: 'English',
+    General_Application: 'Application',
 	}
 };
