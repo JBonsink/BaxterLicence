@@ -1,0 +1,66 @@
+@import "bootstrap.variables.less";
+
+// Overrides
+@brand-primary:         #3B71A9;
+@navbar-inverse-bg:     #AB903E;
+@navbar-baxter-left:    #1c366f;
+
+// Core imports
+@import "bootstrap.less";
+
+// CSS overrides                              
+.navbar-inverse{
+    background: @navbar-baxter-left; /* Old browsers */
+    background: -moz-linear-gradient(left,  @navbar-baxter-left 50%, @brand-primary 75%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(50%,@navbar-baxter-left), color-stop(75%,@brand-primary)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  @navbar-baxter-left 50%,@brand-primary 75%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  @navbar-baxter-left 50%,@brand-primary 75%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  @navbar-baxter-left 50%,@brand-primary 75%); /* IE10+ */
+    background: linear-gradient(to right,  @navbar-baxter-left 50%,@brand-primary 75%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@navbar-baxter-left', endColorstr='@brand-primary',GradientType=1 ); /* IE6-9 */
+    border-color: @navbar-inverse-bg;
+}
+
+.navbar-inverse .navbar-text {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-nav > li >a {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
+    color: @navbar-inverse-bg;
+    background-color: transparent;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #FFF;
+}
+
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {
+    color: @navbar-inverse-bg;
+    background-color: transparent;
+}
+
+.text-warning {
+    color: @brand-warning;
+}
+
+.text-danger {
+    color: @brand-danger;
+}
+
+.text-success {
+    color: @brand-success;   
+}
+
+//Additions
+.nav-side-menu li a {
+  text-decoration: none;
+  color: @navbar-baxter-left;
+}
+
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+  background-color: rgb(66, 139, 202);    
+}

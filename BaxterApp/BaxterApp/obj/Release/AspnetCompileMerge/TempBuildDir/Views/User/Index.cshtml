@@ -1,0 +1,107 @@
+﻿@using Baxter.Constants;
+@using Baxter.Utilities;
+
+@{
+    ViewBag.Title = Resources.Global.General_Users;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<div id="userTable" class="jtable"></div>
+<script>
+
+    $(function () {
+        downloadObjects(
+            "@Url.Action("GetActions", "Log")",
+            "@Url.Action("GetFields", "Log")",
+            "@Url.Action("GetActions")",
+            "@Url.Action("GetFields")").done(function (logActions, logFields, userActions, userFields) {
+
+            var userTable = $("#userTable");
+
+            {   //User log
+                var fields = $.extend({}, logFields);
+                delete fields["Username"];
+                
+                userLogOptions = $.extend(GetDefaultOptions(logActions), {
+                    defaultSorting: "Timestamp DESC",
+                    fields: fields,                    
+                    searchFields: [
+                    {
+                        column: "Module",
+                        label: "@Resources.Global.Log_Module",
+                        type: SearchTypes.Dropdown,
+                        operator: Operators.Equals,                                        
+                        defaultValue: "@StringFormatters.All(Resources.Global.General_Modules)",
+                        dropdown: 
+                        {
+                            remote: "@Url.Action("GetModuleOptions", "Log")",
+                        },
+                    },
+                    {
+                        column: "Activity",
+                        label: "@Resources.Global.Log_Activity",
+                        type: SearchTypes.Dropdown,
+                        operator: Operators.Equals,                    
+                        defaultValue: "@StringFormatters.All(Resources.Global.General_Modules)",
+                        dropdown: 
+                        {
+                            remote: "@Url.Action("GetActivityOptions", "Log")",
+                        },
+                    }]
+                });
+                                   
+                var userLogTable = CreateGlyphiconField("glyphicon glyphicon-book", '@Resources.Global.General_Activities', 
+                    function (tr,parent, table) {
+                        var payload = {
+                            searchFields: [
+                                {
+                                    Column: "UserID",
+                                    Value: parent.record.ID,
+                                    Operator: Operators.Equals
+                                }
+                            ]
+                        };
+
+                        userLogOptions.title = String.format("@Resources.Global.User_ActivitiesOf", parent.record.Name);
+                        table.openChildTable(tr, userLogOptions, function (data) { data.childTable.jtable('load', payload); });                     
+                    })                
+            }
+
+            {   //User
+                delete logFields["EntityName"];
+                var childTables = AddEntityLogField({ UserLog: userLogTable }, logActions, logFields, "Name", "@((int)Module.User)");
+
+                userFields.ConfirmPassword.list = userFields.NewPassword.list = false;
+                userFields.RoleID.options = "@Url.Action("GetRoleOptions", "Role")";
+                userFields.RoleID.type = FieldTypes.Dropdown;
+                userFields.NewPassword.edit = userFields.ConfirmPassword.edit = false;
+                userFields.EditPassword.create = userFields.ConfirmEditPassword.create = false;
+                userFields.EditPassword.list = userFields.ConfirmEditPassword.list = false;
+
+                userOptions = $.extend(GetDefaultOptions(userActions), {
+                    title: "@ViewBag.Title",
+                    defaultSorting: "Name ASC",
+                    fields: $.extend(childTables, userFields),
+                    searchFields: [{
+                        column: "Name",
+                        operator: Operators.StartsWith,
+                        label: "@Resources.Global.User_UserName",
+                        type: SearchTypes.Text
+                    },
+                    {
+                        column: "RoleID",
+                        operator: Operators.Equals,
+                        label: "@Resources.Global.General_Role",
+                        type: SearchTypes.Dropdown,
+                        dropdown: {
+                            remote: "@Url.Action("GetRoleOptions", "Role")"
+                        }
+                    }
+                    ]
+                });
+                userTable.jtable(userOptions);
+                userTable.jtable('load');
+            }
+        });
+    });
+</script>

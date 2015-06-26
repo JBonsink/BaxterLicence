@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="BaxterBase" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Jos\\Projects\\Yoolis\\BaxterBase\\BaxterApp\\BaxterApp\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Jos\\Projects\\Yoolis\\BaxterBase\\BaxterApp\\BaxterApp\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="BaxterContext-Web.config Connection String" description="" value="Data Source=.\NLUT_SQLSERVER20;Initial Catalog=BaxterBase;User ID=sa;Password=automed;MultipleActiveResultSets=True;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jos\\Projects\\Yoolis\\BaxterBase\\BaxterApp\\BaxterApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BaxterContext']/@connectionString" />
+  </parameter>
+</parameters>

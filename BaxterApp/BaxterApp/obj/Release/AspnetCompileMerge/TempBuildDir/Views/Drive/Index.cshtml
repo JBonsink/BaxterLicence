@@ -1,0 +1,47 @@
+﻿@using Baxter.Models.Baxter
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Volumes</h1>
+
+<div id="drives" class="row"></div>
+
+<script>
+    $(function () {
+        downloadObjectAsync("@Url.Action("GetLocalDrives")").done(function (response) {
+            var drives = response.Records;
+
+            $.each(drives, function (i, drive) {
+                var driveInfo = $('<div class="alert alert-info"></div>').text(String.format('@Resources.Global.Disk_FreeGB', drive.FreeSpace, drive.TotalSpace));
+
+                var col = $('<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" />')
+                            .append($('<h3/>').text(drive.Name))
+                            .append($('<canvas id="chart-' + i + '" />'))
+                            .append(driveInfo)
+                            .appendTo($('#drives'));
+                                    
+                var doughnutData = [
+                    {
+                        value: drive.FreeSpace,
+                        color: "#EEEEEE",
+                        highlight: "#F1F1F1",
+                        label: "@Resources.Global.Drive_FreeSpace"                    
+                    },
+                    {
+                        value: drive.TotalSpace - drive.FreeSpace,
+                        color: "#26A0DA",
+                        highlight: "#77D3FF",
+                        label: "@Resources.Global.Drive_UsedSpace"
+                    }
+                ];
+
+                var ctx = $('#chart-' + i)[0].getContext("2d");
+                var doughnut1 = new Chart(ctx).Doughnut(doughnutData, { responsive: true, scaleLabel: "<%=value%>GB" });
+            });
+        });
+    });
+</script>
+

@@ -1,0 +1,40 @@
+﻿@using Baxter
+@using Baxter.Constants
+@using Baxter.Utilities
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="shortcut icon" href="@Url.Content(AppSettings.Icon)" type="image/x-icon" />
+
+    <meta name="viewport" content="width=device-width" />
+
+    @Scripts.Render(
+            "~/bundles/jquery",
+            "~/bundles/bootstrap",
+            "~/bundles/ktable")
+
+    <script src="~/Scripts/Languages/Global.@(UICulture).js"></script>    
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap-dialog.less")">
+    <link id="style" rel="stylesheet" type="text/css" href="@Html.Action("GetUserStyle")">
+
+    @Styles.Render(
+            "~/bundles/css",
+            "~/bundles/jtableStyles")
+
+    @{ Html.RenderAction("ValidationEngineLanguage", "Partial"); }
+
+    @Scripts.Render("~/bundles/utilities")
+
+</head>
+
+<body class="body">
+    @Html.Partial("_TopMenu")
+
+    @RenderBody()
+</body>
+</html>

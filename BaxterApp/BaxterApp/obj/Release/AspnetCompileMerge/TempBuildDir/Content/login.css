@@ -1,0 +1,12 @@
+﻿.footer-wrapper {
+    background: #FFF;
+}
+
+.clearfix:before, .clearfix:after {
+    display: table;
+    content: " ";
+}
+
+footer {
+    margin-bottom: 20px;
+}   

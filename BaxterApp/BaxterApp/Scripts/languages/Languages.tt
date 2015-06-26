@@ -1,0 +1,118 @@
+﻿<#@ template  debug="true" hostSpecific="true" #>
+<#@ Assembly Name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#@include file="../Manager.ttinclude"#>
+<#
+	var manager = Manager.Create(Host, GenerationEnvironment);
+	var projectPath = Host.ResolveAssemblyReference("$(ProjectDir)");
+	var resourceNames = new string[2] 
+	{		
+		"Global.nl-NL.resx",
+		"Global.resx"
+	};
+    
+	foreach (var name in resourceNames) { 
+		var resxFileName = projectPath + @"Languages\" + name;		    
+
+		if (!File.Exists(resxFileName)) {
+			this.Error("Unable to find RESX file. Please check T4 variable. Current path is '" + resxFileName + "'");
+		}
+		else
+		{
+			string fileName;
+			if (name.Contains('-'))
+			{
+				fileName = name.Replace(".resx", ".js");            
+            }
+			else 
+            {
+				fileName = name.Replace(".resx", ".en-GB.js");            
+            }
+
+			manager.StartNewFile(fileName);
+#>
+var Resources = {
+	Global: {
+<#
+			this.PushIndent("    ");
+			foreach (var el in GetElements(resxFileName, "data"))
+			{
+				OutputElement(this, el);
+			}
+			this.PopIndent();
+#>
+	}
+};
+<#
+		}
+    }
+
+	manager.Process(true);
+#>
+<#+
+    static void OutputElement(GeneratedTextTransformation tt, XElement el)
+    {
+        var name = el.Attribute("name").Value;
+        var value = el.Element("value").Value;
+
+        bool dblquote = value.Contains("'");        
+        var matches = Regex.Matches(value, @"\{[0-9]+\}");
+
+        var variables = new List<string>();
+        foreach (Match match in matches)
+        {
+            var param = match.Value;
+            var paramIndex = Int32.Parse(param.Substring(1, param.Length - 2));
+            var paramName = string.Format("val{0}", paramIndex);
+
+            if (!variables.Contains(paramName))
+            {
+                variables.Add(paramName);
+                value = value.Replace(param, string.Format("{0} + {1} + {0}", dblquote ? "\"" : "'", paramName));
+            }
+        }
+
+        if (variables.Any())
+        {
+            tt.WriteLine("{0}: function({1}) {{", name, string.Join(", ", variables.ToArray()));
+            tt.PushIndent("    ");
+            tt.WriteLine("return {0}{1}{0};", dblquote ? "\"" : "'", value);
+            tt.PopIndent();
+            tt.WriteLine("},");
+        }
+        else
+        {
+            tt.WriteLine("{0}: {1}{2}{1},", name, dblquote ? "\"" : "'", value);
+        }
+    }    
+
+    static IEnumerable<XElement> GetElements(string inputFile, string elementName)
+    {
+        using (var reader = XmlReader.Create(inputFile))
+        {
+            reader.MoveToContent();
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    if (reader.Name == elementName)
+                    {
+                        XElement el = XNode.ReadFrom(reader) as XElement;
+                        if (el != null)
+                        {
+                            yield return el;
+                        }
+                    }
+                }
+            }
+        }
+    }
+#>

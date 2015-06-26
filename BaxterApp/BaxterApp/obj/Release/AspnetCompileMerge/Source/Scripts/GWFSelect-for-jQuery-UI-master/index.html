@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rewriting the jQuery font selection plugin</title>
+    <!-- jQuery and jQuery UI plus stylesheet -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css">
+    <!-- Google WebFont loader -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js"></script>
+    <!-- GWFSelect plugin plus stylesheet -->
+    <script type="text/javascript" src="javascript/jquery.gwfselect.js"></script>
+    <link type="text/css" rel="stylesheet" href="stylesheets/gwfselect.css">
+    <!-- JavaScript/CSS for demo page -->
+    <script type="text/javascript">
+$(function () {
+    $('#gwf').gwfselect().bind('gwfselectchange', function (event, fontInfo) {
+        $('p').css(fontInfo);
+    });
+    $('#random').button().click(function () {
+        $('#gwf').gwfselect('randomize');
+    });
+    $('#gwf-ltd').gwfselect({ fonts: ['Amaranth', 'Artifika', 'Averia Libre'] });
+	$('#gwf-ltd').gwfselect().bind('gwfselectchange', function (event, fontInfo) {
+        $('p').css(fontInfo);
+		console.log(fontInfo);
+    });
+});
+    </script>
+    <style type="text/css">
+body {
+  width: 800px;
+  margin: 1em auto;
+  font: normal 16px Verdana, sans-serif;
+}
+.ui-button {
+  font-size: 14px;
+}
+    </style>
+  </head>
+  <body>
+    <section>
+      Select font:
+      <input id="gwf">
+      <button id="random">Randomize</button>
+    </section>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+      occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum.
+    </p>
+    <hr>
+    <section>
+      Limited font selection:
+      <input id="gwf-ltd">
+    </section>
+  </body>
+</html>

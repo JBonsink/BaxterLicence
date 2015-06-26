@@ -1,0 +1,138 @@
+﻿@using Baxter
+@using Baxter.Constants;
+@model Baxter.Models.UserLoginModel
+
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="@Url.Content(AppSettings.Icon)" type="image/x-icon" />
+
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
+    @Styles.Render("~/bundles/css")
+
+    <link id="style" rel="stylesheet" type="text/css" href="@Url.Content(String.Format("~/Content/themes/bootstrap.{0}.less", AppSettings.DefaultStyle))">
+                                                                          
+    <link href="~/Content/login.css" rel="stylesheet" type="text/css" />
+
+    <script>
+        $(function () {
+            $('#username').focus();
+        });
+    </script>
+</head>
+
+<body class="body">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <img style="margin-top:10px; margin-right: 20px;" src="@Url.Content("~/Content/images/baxter-logo.png")" />
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-top-menu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="collapse-top-menu">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle f16" data-toggle="dropdown">
+                            <span class="flag @(UICulture == Languages.English ? "gb" : "nl")" style="margin: 1px 0;"></span>&nbsp;
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu f32" role="menu">
+                            <li role="presentation">
+                                <a role="menuitem" href="@Url.Action("Culture", "Settings", new { culture = Languages.English })">
+                                    <span class="flag gb"></span>
+                                    <span>&nbsp;@Resources.Global.Language_English</span>
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" href="@Url.Action("Culture", "Settings", new { culture = Languages.Dutch })">
+                                    <span class="flag nl"></span>
+                                    <span>&nbsp;@Resources.Global.Language_Dutch</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper body-inverse">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <h2 class="text-left">@string.Format(Resources.Global.General_WelcomeTo, AppSettings.Name)</h2>
+
+                    @if (!String.IsNullOrEmpty(ViewBag.ErrorMessage))
+                    {
+                        <p class="alert alert-danger">@ViewBag.ErrorMessage</p>
+                    }
+                    else
+                    {
+                        <p class="alert alert-warning">@Resources.Global.Account_Login_Subtitle</p>
+                    }
+
+                    <div class="form">
+                        <form action="@Url.Action("Login", "Account")" method="post" role="form">
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Name)
+                                @Html.TextBoxFor(model => model.Name, new { @id="username", @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Password)
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="checkbox">
+                                        <label for="RememberMe">
+                                            <input data-val="true" id="RememberMe" name="RememberMe" type="checkbox" value="true">
+                                            @Resources.Global.Account_Login_RememberMe
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <input class="btn btn-primary pull-right" type="submit" value="@Resources.Global.Account_Login_LoginButton" />
+                                </div>
+                            </div>
+                        </form>                                                
+                    </div>
+                    <div class="alert alert-info">
+                        @Resources.Global.General_ForgottenPassword<br>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+
+    <div class="footer-menu hidden-xs">
+        <div class="container">
+            <footer>  
+                <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                    <div class="container">
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">                            
+                            <p class="navbar-text">@AppSettings.Version</p>      
+                            <p class="navbar-text pull-right">@AppSettings.Copyright</p>            
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </nav>
+            </footer>
+        </div>
+    </div>    
+</body>
+</html>   

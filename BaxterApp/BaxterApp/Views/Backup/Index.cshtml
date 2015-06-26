@@ -1,0 +1,161 @@
+﻿@using Baxter.Models
+@using Baxter.Utilities
+@using Baxter.Constants
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<h2>@Resources.Global.General_Backups</h2>
+
+<div>
+    <ul id="tabs" class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#backupSettings">@Resources.Global.General_Settings</a></li>
+        <li><a href="#backups">@Resources.Global.General_Backups</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="backupSettings" class="tab-pane fade in active">
+            <form id="settings-form">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2">
+                        <h3>@Resources.Global.Backup_Days</h3>
+                        <div class="checkbox"><label for="monday"><input type="checkbox" rv-checked="settings.Monday" id="monday" />@Resources.Global.Day_Monday</label></div>
+                        <div class="checkbox"><label for="tuesday"><input type="checkbox" rv-checked="settings.Tuesday" id="tuesday" />@Resources.Global.Day_Tuesday</label></div>
+                        <div class="checkbox"><label for="wednesday"><input type="checkbox" rv-checked="settings.Wednesday" id="wednesday" />@Resources.Global.Day_Wednesday</label></div>
+                        <div class="checkbox"><label for="thursday"><input type="checkbox" rv-checked="settings.Thursday" id="thursday"/>@Resources.Global.Day_Thursday</label></div>
+                        <div class="checkbox"><label for="friday"><input type="checkbox" rv-checked="settings.Friday" id="friday"/>@Resources.Global.Day_Friday</label></div>
+                        <div class="checkbox"><label for="saturday"><input type="checkbox" rv-checked="settings.Saturday" id="saturday"/>@Resources.Global.Day_Saturday</label></div>
+                        <div class="checkbox"><label for="sunday"><input type="checkbox" rv-checked="settings.Sunday" id="sunday"/>@Resources.Global.Day_Sunday</label></div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <h3>@Resources.Global.Settings_General</h3>
+                        <div class="form-group">
+                            <label for="minFreeSpaceGB">@Resources.Global.Backup_MinFreeSpace</label>
+                            <div class="input-group">
+                                <input rv-value="settings.MinFreeSpaceGB" id="minFreeSpaceGB" name="MinFreeSpaceGB" type="number" class="validate[required, custom[integer], min[0], max[256]] form-control" autocomplete="off">
+                                <span class="input-group-addon">GB</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="backupTTLWeeks">@Resources.Global.Backup_TTL</label>
+                            <div class="input-group">
+                                <input rv-value="settings.BackupTTLWeeks" id="backupTTLWeeks" name="BackupTTLWeeks" type="number" class="validate[required, custom[integer], min[1], max[260]] form-control" autocomplete="off">
+                                <span class="input-group-addon">@Resources.Global.General_Weeks</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">@Resources.Global.General_Time</label>
+                            <select rv-value="settings.Time" class="form-control validate[required]" id="time" name="Time">
+                                <option value="00:00">00:00</option>
+                                <option value="00:30">00:30</option>
+                                <option value="01:00">01:00</option>
+                                <option value="01:30">01:30</option>
+                                <option value="02:00">02:00</option>
+                                <option value="02:30">02:30</option>
+                                <option value="03:00">03:00</option>
+                                <option value="03:30">03:30</option>
+                                <option value="04:00">04:00</option>
+                                <option value="04:30">04:30</option>
+                                <option value="05:00">05:00</option>
+                                <option value="05:30">05:30</option>
+                                <option value="06:00">06:00</option>
+                                <option value="06:30">06:30</option>
+                                <option value="07:00">07:00</option>
+                                <option value="07:30">07:30</option>
+                                <option value="08:00">08:00</option>
+                                <option value="08:30">08:30</option>
+                                <option value="09:00">09:00</option>
+                                <option value="09:30">09:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.Global.Backup_Path</label>
+                            <input rv-value="settings.BackupPath" class="form-control validate[required]" id="location" name="BackupPath" type="text" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3">
+                        <h3>@Resources.Global.Settings_Network</h3>
+                        <div class="form-group">
+                            <label>@Resources.Global.Backup_NetworkShare</label>
+                            <input rv-value="settings.NetworkShare" class="form-control" id="networkShare" name="NetworkShare" type="text" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.Global.Backup_NetworkUsername</label>
+                            <input rv-value="settings.NetworkUsername" class="form-control" id="networkUsername" name="NetworkUsername" type="text" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label>@Resources.Global.Backup_NetworkPassword</label>
+                            <input rv-value="settings.NetworkPassword" class="form-control" id="networkPassword" name="NetworkPassword" type="password" autocomplete="off">
+                        </div>
+                        <button id="test-button" class="btn btn-primary" rv-on-click="settings.test"><i class="glyphicon glyphicon-dashboard"></i> @Resources.Global.Backup_TestSettings</button>
+                    </div>
+                    <div id="drive-info" class="col-lg-4 col-md-4">
+                        <h3>@Resources.Global.Disk_CurrentUsage</h3>
+                        <div id="free-space-info" class="alert"></div>
+                        <canvas id="chart"></canvas>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3">
+                        <button id="save-button" class="btn btn-primary" rv-on-click="settings.save"><i class="fa fa-floppy-o"></i> @Resources.Global.General_Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="backups" class="tab-pane fade">
+            <div id="backup-table" class="jtable"></div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/views/BackupView.js"></script>
+<script>    
+    var hasEditPermission = @(Html.Action("HasPermission", new { function = FunctionName.Maintenance, permission = Permission.Edit }).ToString().ToLower());
+    
+    $('#settings-form').validationEngine('attach', {
+        focusFirstField: false,
+        promptPosition: "topRight:-100,10",
+        binded: false,
+        scroll: false
+    });
+    
+    $('#tabs a').click(function (e) {
+        e.preventDefault()
+        $(this).tab('show')
+    })
+
+    if (!hasEditPermission) {
+        $('input, select, #save-button').attr('disabled', true);
+    }
+
+    var view = new BackupView();
+</script>

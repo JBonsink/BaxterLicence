@@ -1,0 +1,771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Global_PasswordMismatch" xml:space="preserve">
+    <value>De twee wachtwoorden komen niet overeen</value>
+  </data>
+  <data name="Account_Login_LoginButton" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Account_Login_LoginFailed" xml:space="preserve">
+    <value>Onbekende gebruikersnaam/wachtwoord combinatie.</value>
+  </data>
+  <data name="Account_Login_PasswordRequired" xml:space="preserve">
+    <value>Vul a.u.b. uw wachtwoord in.</value>
+  </data>
+  <data name="Account_Login_RememberMe" xml:space="preserve">
+    <value>Onthoud mij?</value>
+  </data>
+  <data name="Account_Login_Subtitle" xml:space="preserve">
+    <value>Alleen voor geauthoriseerde gebruikers.</value>
+  </data>
+  <data name="Account_Login_Title" xml:space="preserve">
+    <value>Inloggen</value>
+  </data>
+  <data name="Account_Login_UserNameRequired" xml:space="preserve">
+    <value>Vul a.u.b. uw gebruikersnaam in.</value>
+  </data>
+  <data name="Account_Manage_Button_ChangePassword" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="Account_Manage_CurrentPassword" xml:space="preserve">
+    <value>Huidige wachtwoord</value>
+  </data>
+  <data name="Account_Manage_CurrentPasswordRequired" xml:space="preserve">
+    <value>Vul a.u.b. uw huidige wachtwoord in.</value>
+  </data>
+  <data name="Account_Manage_LoggedInAs" xml:space="preserve">
+    <value>U bent ingelogd als</value>
+  </data>
+  <data name="Account_Manage_NewPassword" xml:space="preserve">
+    <value>Nieuw wachtwoord</value>
+  </data>
+  <data name="Account_Manage_NewPasswordRequired" xml:space="preserve">
+    <value>Vul a.u.b. een nieuwe wachtwoord in.</value>
+  </data>
+  <data name="General_ChangesSuccessfullySaved" xml:space="preserve">
+    <value>De veranderingen zijn succesvol opgeslagen.</value>
+  </data>
+  <data name="Account_Manage_Subtitle_Password" xml:space="preserve">
+    <value>Verander uw wachtwoord.</value>
+  </data>
+  <data name="Account_Manage_Title" xml:space="preserve">
+    <value>Beheer uw account</value>
+  </data>
+  <data name="General_Activities" xml:space="preserve">
+    <value>activiteiten</value>
+  </data>
+  <data name="General_Log" xml:space="preserve">
+    <value>Logboek vermelding</value>
+  </data>
+  <data name="General_Logs" xml:space="preserve">
+    <value>Logboek vermeldingen</value>
+  </data>
+  <data name="General_AllEntities" xml:space="preserve">
+    <value>Alle {0}</value>
+  </data>
+  <data name="General_EntityAlreadyExists" xml:space="preserve">
+    <value>De volgende entiteit is al aanwezig in het systeem: {0}.</value>
+  </data>
+  <data name="General_FailedToRegisterEntity" xml:space="preserve">
+    <value>Het registreren de volgende entiteit is mislukt: {0}.</value>
+  </data>
+  <data name="General_Hello" xml:space="preserve">
+    <value>Hallo</value>
+  </data>
+  <data name="General_Home" xml:space="preserve">
+    <value>Thuis</value>
+  </data>
+  <data name="General_LogOff" xml:space="preserve">
+    <value>Uitloggen</value>
+  </data>
+  <data name="General_MissingData" xml:space="preserve">
+    <value>Er mist data</value>
+  </data>
+  <data name="General_Modules" xml:space="preserve">
+    <value>modules</value>
+  </data>
+  <data name="General_No" xml:space="preserve">
+    <value>Nee</value>
+  </data>
+  <data name="General_None" xml:space="preserve">
+    <value>Geen</value>
+  </data>
+  <data name="General_ReceivedInvalidData" xml:space="preserve">
+    <value>Er is wat fout met de ontvangen gegevens.</value>
+  </data>
+  <data name="General_Role" xml:space="preserve">
+    <value>Rol</value>
+  </data>
+  <data name="General_Roles" xml:space="preserve">
+    <value>Rollen</value>
+  </data>
+  <data name="General_SelectEntity" xml:space="preserve">
+    <value>Selecteer een {0}.</value>
+  </data>
+  <data name="General_ThereArentAnyAvailableYet" xml:space="preserve">
+    <value>Er zijn nog geen {0} beschikbaar.</value>
+  </data>
+  <data name="General_UnkownEntity" xml:space="preserve">
+    <value>De volgende entiteit bestaat niet: {0}.</value>
+  </data>
+  <data name="General_User" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="General_Users" xml:space="preserve">
+    <value>Gebruikers</value>
+  </data>
+  <data name="General_Yes" xml:space="preserve">
+    <value>Ja</value>
+  </data>
+  <data name="Home_Index_Subtitle" xml:space="preserve">
+    <value>Welkom!</value>
+  </data>
+  <data name="Home_Index_Title" xml:space="preserve">
+    <value>Thuis</value>
+  </data>
+  <data name="JTable_AddNewRecord" xml:space="preserve">
+    <value>Voeg toe</value>
+  </data>
+  <data name="General_AreYouSure" xml:space="preserve">
+    <value>Weet je het zeker?</value>
+  </data>
+  <data name="General_Cancel" xml:space="preserve">
+    <value>Annuleer</value>
+  </data>
+  <data name="JTable_CanNotDeleteRecords" xml:space="preserve">
+    <value>Kan niet {0} van de {1} vermeldingen verwijderen!</value>
+  </data>
+  <data name="JTable_CanNotLoadOptionsFor" xml:space="preserve">
+    <value>Kan de opties voor veld {0} niet laden.</value>
+  </data>
+  <data name="JTable_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="JTable_Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="JTable_DeleteConfirmation" xml:space="preserve">
+    <value>Deze vermelding zal worden verwijderd.</value>
+  </data>
+  <data name="JTable_DeleteProggress" xml:space="preserve">
+    <value>Er worden {0} vermeldingen verwijderd, bezig met verwerken...</value>
+  </data>
+  <data name="JTable_Deleting" xml:space="preserve">
+    <value>Verwijder</value>
+  </data>
+  <data name="JTable_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="JTable_EditRecord" xml:space="preserve">
+    <value>Aanpassen</value>
+  </data>
+  <data name="General_Error" xml:space="preserve">
+    <value>Fout</value>
+  </data>
+  <data name="JTable_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="JTable_GoToPageLabel" xml:space="preserve">
+    <value>Ga naar pagina</value>
+  </data>
+  <data name="JTable_LoadingMessage" xml:space="preserve">
+    <value>Bezig met laden...</value>
+  </data>
+  <data name="JTable_LoadRecords" xml:space="preserve">
+    <value>Laad gegevens</value>
+  </data>
+  <data name="JTable_NoDataAvailable" xml:space="preserve">
+    <value>Er zijn geen gegevens beschikbaar!</value>
+  </data>
+  <data name="JTable_PageSizeChangeLabel" xml:space="preserve">
+    <value>Aantal rijen</value>
+  </data>
+  <data name="JTable_PagingInfo" xml:space="preserve">
+    <value>Toont {0}-{1} van de {2} rijen.</value>
+  </data>
+  <data name="General_Save" xml:space="preserve">
+    <value>Opslaan</value>
+  </data>
+  <data name="General_Saving" xml:space="preserve">
+    <value>Bezig met opslaan</value>
+  </data>
+  <data name="General_Search" xml:space="preserve">
+    <value>Zoeken</value>
+  </data>
+  <data name="JTable_ServerCommunicationError" xml:space="preserve">
+    <value>Er is fout opgetreden tijdens het communiceren met de server.</value>
+  </data>
+  <data name="Log_Activity" xml:space="preserve">
+    <value>Activiteit</value>
+  </data>
+  <data name="Log_AddedANewEntity" xml:space="preserve">
+    <value>Er is een nieuwe {0} aangemaakt: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_Created" xml:space="preserve">
+    <value>Aangemaakt</value>
+  </data>
+  <data name="Log_DeleteAnExistingEntity" xml:space="preserve">
+    <value>Er is een {0} verwijderd: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_Deleted" xml:space="preserve">
+    <value>Verwijderd</value>
+  </data>
+  <data name="Log_Description" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="Log_Edited" xml:space="preserve">
+    <value>Aangepast</value>
+  </data>
+  <data name="Log_EditedAnExisting" xml:space="preserve">
+    <value>Er is een  {0} aangepast, dit zijn de gemaakte wijzigingen: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_EntityHistory" xml:space="preserve">
+    <value>Geschiedenis</value>
+  </data>
+  <data name="Log_EntityName" xml:space="preserve">
+    <value>Naam van entiteit</value>
+  </data>
+  <data name="Log_HistoryOf" xml:space="preserve">
+    <value>Geschiedenis van {0}</value>
+  </data>
+  <data name="Log_Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Log_PropertyChangedFromTo" xml:space="preserve">
+    <value>Eigenschap '{0}' is veranderd van '{1}' naar '{2}'&lt;br/&gt;</value>
+  </data>
+  <data name="Log_TableTitle" xml:space="preserve">
+    <value>Activiteiten logboek</value>
+  </data>
+  <data name="Log_Timestamp" xml:space="preserve">
+    <value>Tijd</value>
+  </data>
+  <data name="Role_AddFunction" xml:space="preserve">
+    <value>Voeg een functie toe</value>
+  </data>
+  <data name="Role_AddFunctionTo" xml:space="preserve">
+    <value>Voeg een functie toe aan {0}</value>
+  </data>
+  <data name="Role_Function" xml:space="preserve">
+    <value>Functie</value>
+  </data>
+  <data name="Role_ModuleAccessLevel" xml:space="preserve">
+    <value>{0} toegangsniveau</value>
+  </data>
+  <data name="Role_Name" xml:space="preserve">
+    <value>Rol naam</value>
+  </data>
+  <data name="User_ActivitiesOf" xml:space="preserve">
+    <value>Activiteiten van {0}</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_EmployeeID" xml:space="preserve">
+    <value>Werknemers ID</value>
+  </data>
+  <data name="User_FullName" xml:space="preserve">
+    <value>Volledige naam</value>
+  </data>
+  <data name="User_NewPassword" xml:space="preserve">
+    <value>Nieuw wachtwoord</value>
+  </data>
+  <data name="User_Password" xml:space="preserve">
+    <value>Wachtwoord</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>Gebruikersnaam</value>
+  </data>
+  <data name="General_AvailableEntities" xml:space="preserve">
+    <value>Beschikbare {0}</value>
+  </data>
+  <data name="Log_PropertyChanged" xml:space="preserve">
+    <value>Eigenschap {0} is aangepast.</value>
+  </data>
+  <data name="General_Settings" xml:space="preserve">
+    <value>Instellingen</value>
+  </data>
+  <data name="General_Language" xml:space="preserve">
+    <value>Taal</value>
+  </data>
+  <data name="General_Languages" xml:space="preserve">
+    <value>Talen</value>
+  </data>
+  <data name="General_FileNotAnImage" xml:space="preserve">
+    <value>Het bestand is geen afbeelding.</value>
+  </data>
+  <data name="General_Image" xml:space="preserve">
+    <value>Afbeelding</value>
+  </data>
+  <data name="General_UnsupportedImageFormat" xml:space="preserve">
+    <value>Afbeeldingen van het type '{0}' worden niet ondersteund.</value>
+  </data>
+  <data name="General_Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Image_Filename" xml:space="preserve">
+    <value>Bestandsnaam</value>
+  </data>
+  <data name="Image_Format" xml:space="preserve">
+    <value>Afbeeldingstype</value>
+  </data>
+  <data name="Image_Delete" xml:space="preserve">
+    <value>Verwijder afbeelding</value>
+  </data>
+  <data name="Image_ViewLarger" xml:space="preserve">
+    <value>Bekijk grotere afbeelding</value>
+  </data>
+  <data name="General_DeleteSelected" xml:space="preserve">
+    <value>Verwijder geselecteerde</value>
+  </data>
+  <data name="Account_Global_ConfirmPassword" xml:space="preserve">
+    <value>Bevestig wachtwoord</value>
+  </data>
+  <data name="JTable_AddNew" xml:space="preserve">
+    <value>Voeg {0} toe</value>
+  </data>
+  <data name="JTable_DeleteConfirmationMulti" xml:space="preserve">
+    <value>Deze vermeldingen zullen worden verwijderd.</value>
+  </data>
+  <data name="JTable_Edit" xml:space="preserve">
+    <value>Bewerk {0}</value>
+  </data>
+  <data name="JTable_FormCount" xml:space="preserve">
+    <value>Aantal formulieren</value>
+  </data>
+  <data name="General_Remaining" xml:space="preserve">
+    <value>Overig</value>
+  </data>
+  <data name="General_Name" xml:space="preserve">
+    <value>Naam</value>
+  </data>
+  <data name="General_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="General_ConfirmAddition" xml:space="preserve">
+    <value>Weet je zeker dat je de volgende {0} wil toevoegen?</value>
+  </data>
+  <data name="General_ErrorPleaseTryAgain" xml:space="preserve">
+    <value>Er is iets fout gegaan, probeer het nogmaals.</value>
+  </data>
+  <data name="General_Remarks" xml:space="preserve">
+    <value>Opmerkingen</value>
+  </data>
+  <data name="General_AddTo" xml:space="preserve">
+    <value>Voeg toe aan {0}</value>
+  </data>
+  <data name="General_Instructions" xml:space="preserve">
+    <value>Instructies</value>
+  </data>
+  <data name="General_Height" xml:space="preserve">
+    <value>Hoogte</value>
+  </data>
+  <data name="General_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="General_Width" xml:space="preserve">
+    <value>Breedte</value>
+  </data>
+  <data name="General_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="General_PreparingDownload" xml:space="preserve">
+    <value>Uw document wordt aangemaakt, even geduld a.u.b.</value>
+  </data>
+  <data name="General_EntityNotExist" xml:space="preserve">
+    <value>{0} {1} bestaat niet.</value>
+  </data>
+  <data name="General_ConfirmCancel" xml:space="preserve">
+    <value>Wilt u annuleren?</value>
+  </data>
+  <data name="General_DeleteItem" xml:space="preserve">
+    <value>Verwijder item</value>
+  </data>
+  <data name="General_ClearFields" xml:space="preserve">
+    <value>Velden wissen</value>
+  </data>
+  <data name="General_Amount" xml:space="preserve">
+    <value>Aantal</value>
+  </data>
+  <data name="General_Add" xml:space="preserve">
+    <value>Voeg toe</value>
+  </data>
+  <data name="General_From" xml:space="preserve">
+    <value>Van</value>
+  </data>
+  <data name="General_Till" xml:space="preserve">
+    <value>Tot</value>
+  </data>
+  <data name="General_Close" xml:space="preserve">
+    <value>Sluiten</value>
+  </data>
+  <data name="General_Ok" xml:space="preserve">
+    <value>Oké</value>
+  </data>
+  <data name="Image_Select" xml:space="preserve">
+    <value>Selecteer foto</value>
+  </data>
+  <data name="General_FailedMultiDelete" xml:space="preserve">
+    <value>Het verwijderen is bij een of meerdere items niet gelukt.</value>
+  </data>
+  <data name="General_AccessDenied" xml:space="preserve">
+    <value>Toegang geweigerd!</value>
+  </data>
+  <data name="General_Warning" xml:space="preserve">
+    <value>Waarschuwing</value>
+  </data>
+  <data name="General_PropertyIsNotUnique" xml:space="preserve">
+    <value>Het veld {0} is niet uniek.</value>
+  </data>
+  <data name="General_Create" xml:space="preserve">
+    <value>Aanmaken</value>
+  </data>
+  <data name="General_Delete" xml:space="preserve">
+    <value>Verwijderen</value>
+  </data>
+  <data name="General_Edit" xml:space="preserve">
+    <value>Aanpassen</value>
+  </data>
+  <data name="General_View" xml:space="preserve">
+    <value>Bekijken</value>
+  </data>
+  <data name="General_Storage" xml:space="preserve">
+    <value>Magazijn</value>
+  </data>
+  <data name="General_File" xml:space="preserve">
+    <value>Bestand</value>
+  </data>
+  <data name="Error_NoRowsSelected" xml:space="preserve">
+    <value>Geen rijen geselecteerd</value>
+  </data>
+  <data name="General_AddX" xml:space="preserve">
+    <value>Voeg {0} toe</value>
+  </data>
+  <data name="General_InvalidDate" xml:space="preserve">
+    <value>Ongeldige datum meegeleverd.</value>
+  </data>
+  <data name="General_Find" xml:space="preserve">
+    <value>Zoek {0} op</value>
+  </data>
+  <data name="User_MyAccount" xml:space="preserve">
+    <value>Mijn account</value>
+  </data>
+  <data name="General_SelectedXAdded" xml:space="preserve">
+    <value>De geselecteerde {0} zijn succesvol toegevoegd.</value>
+  </data>
+  <data name="General_SelectedXPartiallyAdded" xml:space="preserve">
+    <value>De geselecteerde {0} zijn deels toegevoegd.</value>
+  </data>
+  <data name="General_Step1" xml:space="preserve">
+    <value>Stap 1</value>
+  </data>
+  <data name="General_Step2" xml:space="preserve">
+    <value>Stap 2</value>
+  </data>
+  <data name="General_Archived" xml:space="preserve">
+    <value>Gearchiveerd</value>
+  </data>
+  <data name="General_SelectedX" xml:space="preserve">
+    <value>Geselecteerde {0}</value>
+  </data>
+  <data name="General_Files" xml:space="preserve">
+    <value>Bestanden</value>
+  </data>
+  <data name="Error_FileAlreadyExists" xml:space="preserve">
+    <value>Het bestand {0} is al eerder geüpload. Verander de bestandsnaam indien u het toch nog wil uploaden.</value>
+  </data>
+  <data name="Error_UploadFailed" xml:space="preserve">
+    <value>Uploaden mislukt.</value>
+  </data>
+  <data name="General_NoDataAvailableYet" xml:space="preserve">
+    <value>Er zijn nog geen gegevens beschikbaar.</value>
+  </data>
+  <data name="General_Processing" xml:space="preserve">
+    <value>Bezig met verwerken...</value>
+  </data>
+  <data name="General_Change" xml:space="preserve">
+    <value>Verandering</value>
+  </data>
+  <data name="General_Date" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="General_Description" xml:space="preserve">
+    <value>Beschrijving</value>
+  </data>
+  <data name="Log_NoValue" xml:space="preserve">
+    <value>Geen waarde</value>
+  </data>
+  <data name="General_ForgottenPassword" xml:space="preserve">
+    <value>Wachtwoord vergeten? Neem contact op met de beheerders.</value>
+  </data>
+  <data name="General_WelcomeTo" xml:space="preserve">
+    <value>Welkom bij {0}</value>
+  </data>
+  <data name="Day_Friday" xml:space="preserve">
+    <value>Vrijdag</value>
+  </data>
+  <data name="Day_Monday" xml:space="preserve">
+    <value>Maandag</value>
+  </data>
+  <data name="Day_Saturday" xml:space="preserve">
+    <value>Zaterdag</value>
+  </data>
+  <data name="Day_Sunday" xml:space="preserve">
+    <value>Zondag</value>
+  </data>
+  <data name="Day_Thursday" xml:space="preserve">
+    <value>Donderdag</value>
+  </data>
+  <data name="Day_Tuesday" xml:space="preserve">
+    <value>Dinsdag</value>
+  </data>
+  <data name="Day_Wednesday" xml:space="preserve">
+    <value>Woensdag</value>
+  </data>
+  <data name="Drive_FreeSpace" xml:space="preserve">
+    <value>Vrije ruimte</value>
+  </data>
+  <data name="Drive_Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="Drive_TotalSpace" xml:space="preserve">
+    <value>Totale ruimte</value>
+  </data>
+  <data name="Drive_UsedSpace" xml:space="preserve">
+    <value>Gebruikte ruimte</value>
+  </data>
+  <data name="General_Drive" xml:space="preserve">
+    <value>Schijf</value>
+  </data>
+  <data name="General_Time" xml:space="preserve">
+    <value>Tijdstip</value>
+  </data>
+  <data name="Backup_NetworkPassword" xml:space="preserve">
+    <value>Netwerklocatie wachtwoord</value>
+  </data>
+  <data name="Backup_NetworkUsername" xml:space="preserve">
+    <value>Netwerklocatie gebruikersnaam</value>
+  </data>
+  <data name="Backup_ServerPassword" xml:space="preserve">
+    <value>Server wachtwoord</value>
+  </data>
+  <data name="Backup_ServerUsername" xml:space="preserve">
+    <value>Server gebruikersnaam</value>
+  </data>
+  <data name="Backup_Path" xml:space="preserve">
+    <value>Locatie</value>
+  </data>
+  <data name="Backups_Days" xml:space="preserve">
+    <value>Backup dagen</value>
+  </data>
+  <data name="Backup_MinFreeSpace" xml:space="preserve">
+    <value>Minimale hoeveelheid vrije ruimte</value>
+  </data>
+  <data name="Backup_TTL" xml:space="preserve">
+    <value>Bewaartijd</value>
+  </data>
+  <data name="Disk_CurrentUsage" xml:space="preserve">
+    <value>Huidig schijfgebruik</value>
+  </data>
+  <data name="Disk_InsufficientSpace" xml:space="preserve">
+    <value>Er is minder ({0} GB) dan de minimum hoeveelheid schijfruimte beschikbaar. Er zullen geen nieuwe backups worden aangemaakt.</value>
+  </data>
+  <data name="Disk_SufficientSpace" xml:space="preserve">
+    <value>Er is {0} GB schijfruimte beschikbaar.</value>
+  </data>
+  <data name="General_Weeks" xml:space="preserve">
+    <value>Weken</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>Algemene instellingen</value>
+  </data>
+  <data name="Settings_Network" xml:space="preserve">
+    <value>Netwerk instellingen</value>
+  </data>
+  <data name="Backup_NetworkShare" xml:space="preserve">
+    <value>Netwerk share</value>
+  </data>
+  <data name="Backup_TestFailed" xml:space="preserve">
+    <value>De opgegeven netwerk instelling zijn incorrect.</value>
+  </data>
+  <data name="Backup_TestSettings" xml:space="preserve">
+    <value>Test instellingen</value>
+  </data>
+  <data name="Backup_TestSuccess" xml:space="preserve">
+    <value>Test gelukt!</value>
+  </data>
+  <data name="Backup_Days" xml:space="preserve">
+    <value>Backup dagen</value>
+  </data>
+  <data name="Backup_Failed" xml:space="preserve">
+    <value>Het is niet gelukt om een backup te maken. Er ging iets fout.</value>
+  </data>
+  <data name="Backup_FailedDisk" xml:space="preserve">
+    <value>Er is niet genoeg vrije ruimte. Er is geen backup gemaakt.</value>
+  </data>
+  <data name="Backup_FailedNetwork" xml:space="preserve">
+    <value>Kon niet verbinden met de netwerk share. Er is geen backup gemaakt.</value>
+  </data>
+  <data name="Backup_Success" xml:space="preserve">
+    <value>Het is gelukt een volledige database backup te maken.</value>
+  </data>
+  <data name="General_AdditionalInfo" xml:space="preserve">
+    <value>Extra info</value>
+  </data>
+  <data name="General_AppLogs" xml:space="preserve">
+    <value>Applicatie logboekvermeldingen</value>
+  </data>
+  <data name="General_Message" xml:space="preserve">
+    <value>Bericht</value>
+  </data>
+  <data name="Warning_ErrorsDetected" xml:space="preserve">
+    <value>Er zijn fouten gedetecteerd!</value>
+  </data>
+  <data name="Disk_FreeGB" xml:space="preserve">
+    <value>{0} GB vrij van {1} GB</value>
+  </data>
+  <data name="Backup_Now" xml:space="preserve">
+    <value>Nu backuppen</value>
+  </data>
+  <data name="Error_UserWithDeletedRole" xml:space="preserve">
+    <value>Er zijn nog gebruikers die deze rol hebben. Een rol kan pas worden verwijderd als deze niet meer wordt gebruikt.</value>
+  </data>
+  <data name="General_Maintenance" xml:space="preserve">
+    <value>Onderhoud</value>
+  </data>
+  <data name="General_AppLog" xml:space="preserve">
+    <value>Applicatie logboek</value>
+  </data>
+  <data name="General_Errors" xml:space="preserve">
+    <value>Foutmeldingen</value>
+  </data>
+  <data name="General_Info" xml:space="preserve">
+    <value>Informatie</value>
+  </data>
+  <data name="General_Warnings" xml:space="preserve">
+    <value>Waarschuwingen</value>
+  </data>
+  <data name="Backup_LastFailed" xml:space="preserve">
+    <value>Laatste backup mislukt</value>
+  </data>
+  <data name="General_NoProblems" xml:space="preserve">
+    <value>Geen problemen gedecteerd</value>
+  </data>
+</root>

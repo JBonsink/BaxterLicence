@@ -1,0 +1,82 @@
+﻿@using Baxter.Constants;
+@using Baxter.Utilities;
+
+@{
+    ViewBag.Title = Resources.Global.General_AppLog;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<div id="logsTable" class="jtable"></div>
+
+<script>
+    $(function () {
+        var logsTable = $("#logsTable");
+
+        downloadObjects(
+            "@Url.Action("GetActions")",
+            "@Url.Action("GetFields")").done(function (logActions, logFields) {
+
+                delete logFields["EntityName"];
+
+                logFields.Module.options = '@Url.Action("GetModuleOptions", "Log")';
+
+                logFields.Seen = {
+                    width: "1%",
+                    display: function (data, table)
+                    {
+                        if (data.record.Seen)
+                        {
+                            return $('<i class="glyphicon glyphicon-eye-open"/>');
+                        }
+                        else 
+                        {
+                            return $('<i class="glyphicon glyphicon-eye-close"/>')
+                            .click(function(){
+                                data.record.Seen = true;
+                                var row = $(this).parents('tr');
+
+                                submitData("@Url.Action("Edit")", {entity: data.record}, function() {
+                                    table._updateRowTexts(row);
+                                    table._showUpdateAnimationForRow(row);
+                                });                                
+                            });
+                        }
+                    }
+                };
+
+                var optionsLog = $.extend(GetDefaultOptions(logActions), {
+                    title: "@ViewBag.Title",
+                    defaultSorting: "Date DESC",
+                    fields: logFields,
+                    fieldOrder: ['Module'],
+                    searchFields: [{
+                        column: "Type",
+                        label: "@Resources.Global.General_Type",
+                        type: SearchTypes.Dropdown,
+                        operator: Operators.Equals,                                        
+                        defaultValue: "@StringFormatters.All(Resources.Global.General_Types)",
+                        dropdown: 
+                        {
+                            options: [{Value: 0, DisplayText: '@StringFormatters.All(Resources.Global.General_Logs.ToLower())'}, {Value: @AppLogType.Warning.ToInt(), DisplayText: '@Resources.Global.General_Warnings'}, {Value: @AppLogType.Error.ToInt(), DisplayText: '@Resources.Global.General_Errors'}],
+                        },
+                    }],
+                    rowInserted: function (e, data) {
+                        var record = data.record;
+
+                        if (record.Type == @AppLogType.Information.ToInt())
+                            data.row.addClass('info');
+                        else if (record.Type == @AppLogType.Error.ToInt())
+                            data.row.addClass('danger');
+                        else if (record.Type == @AppLogType.Success.ToInt())
+                            data.row.addClass('success');
+                        else if (record.Type == @AppLogType.Warning.ToInt())
+                            data.row.addClass('warning');
+                    }
+                });
+
+                logsTable.jtable(optionsLog)
+                           .jtable('load');
+        });
+    });
+</script>         
+

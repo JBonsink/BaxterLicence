@@ -1,0 +1,23 @@
+﻿@using Baxter
+
+@{
+    Layout = "~/Views/Shared/_JTable.cshtml";
+}
+
+<div class="wrapper body-inverse">
+    <div class="container">
+        <div class="row">
+            <div class="table-container col-md-12 col-lg-12">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer-menu">
+    <div class="container">
+        <footer>
+            @{ Html.RenderAction("MainMenu", "Partial"); }
+        </footer>
+    </div>
+</div>                              
