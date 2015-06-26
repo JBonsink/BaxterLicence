@@ -1,0 +1,13 @@
+﻿@using Baxter.Constants
+
+@{
+    ViewBag.Title = Resources.Global.General_Roles;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<div id="roleTable" class="jtable"></div>
+
+<script src="~/Scripts/views/RoleView.js"></script>
+<script>
+    var view = new RoleView();
+</script>

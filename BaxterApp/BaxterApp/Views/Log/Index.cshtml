@@ -1,0 +1,13 @@
+﻿@using Baxter.Utilities;
+
+@{
+    ViewBag.Title = Resources.Global.Log_EntityHistory;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+                                           
+<div id="logTable" class="jtable"></div>
+
+<script src="~/Scripts/views/LogView.js"></script>
+<script>
+    var view = new LogView();
+</script>

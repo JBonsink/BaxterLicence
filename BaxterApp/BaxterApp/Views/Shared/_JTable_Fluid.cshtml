@@ -1,0 +1,21 @@
+﻿@using Baxter
+
+@{
+    Layout = "~/Views/Shared/_JTable.cshtml";
+}
+
+<script>
+    $(function () {
+        $('#menu-toggle').show();
+    });
+</script>
+
+<div class="col-xs-7 col-sm-3 col-md-3 col-lg-2 sidebar sidebar-left sidebar-animate">
+    @{ Html.RenderAction("MainMenu", "Partial"); }
+</div>
+
+<div class="container-fluid">
+    @RenderBody()
+</div>
+
+

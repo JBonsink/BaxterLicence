@@ -1,0 +1,802 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Account_Global_ConfirmPassword" xml:space="preserve">
+    <value>Confirm password</value>
+  </data>
+  <data name="Account_Global_PasswordMismatch" xml:space="preserve">
+    <value>Mismatching passwords</value>
+  </data>
+  <data name="Account_Login_LoginButton" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="Account_Login_LoginFailed" xml:space="preserve">
+    <value>Unkown username/password combination.</value>
+  </data>
+  <data name="Account_Login_PasswordRequired" xml:space="preserve">
+    <value>Please fill in your password.</value>
+  </data>
+  <data name="Account_Login_RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
+  <data name="Account_Login_Subtitle" xml:space="preserve">
+    <value>For authorized users only.</value>
+  </data>
+  <data name="Account_Login_Title" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Account_Login_UserNameRequired" xml:space="preserve">
+    <value>Please fill in your username.</value>
+  </data>
+  <data name="Account_Manage_Button_ChangePassword" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="Account_Manage_CurrentPassword" xml:space="preserve">
+    <value>Current password</value>
+  </data>
+  <data name="Account_Manage_CurrentPasswordRequired" xml:space="preserve">
+    <value>Please fill in your current password.</value>
+  </data>
+  <data name="Account_Manage_LoggedInAs" xml:space="preserve">
+    <value>You're logged in as</value>
+  </data>
+  <data name="Account_Manage_NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="Account_Manage_NewPasswordRequired" xml:space="preserve">
+    <value>Please fill in a new password.</value>
+  </data>
+  <data name="Account_Manage_Subtitle_Password" xml:space="preserve">
+    <value>Change your password.</value>
+  </data>
+  <data name="Account_Manage_Title" xml:space="preserve">
+    <value>Manage your account</value>
+  </data>
+  <data name="Log_Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="General_Log" xml:space="preserve">
+    <value>Activity log</value>
+  </data>
+  <data name="General_Logs" xml:space="preserve">
+    <value>Activity logs</value>
+  </data>
+  <data name="General_AllEntities" xml:space="preserve">
+    <value>All {0}</value>
+  </data>
+  <data name="General_EntityAlreadyExists" xml:space="preserve">
+    <value>This {0} already exists.</value>
+  </data>
+  <data name="General_FailedToRegisterEntity" xml:space="preserve">
+    <value>Failed to register {0}.</value>
+  </data>
+  <data name="General_Hello" xml:space="preserve">
+    <value>Hello</value>
+  </data>
+  <data name="General_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="General_LogOff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="General_MissingData" xml:space="preserve">
+    <value>Missing data</value>
+  </data>
+  <data name="General_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="General_None" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="General_ReceivedInvalidData" xml:space="preserve">
+    <value>There is something wrong with the received data.</value>
+  </data>
+  <data name="General_Role" xml:space="preserve">
+    <value>Role</value>
+  </data>
+  <data name="General_Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="General_SelectEntity" xml:space="preserve">
+    <value>Select {0}.</value>
+  </data>
+  <data name="General_ThereArentAnyAvailableYet" xml:space="preserve">
+    <value>There aren't any {0} available yet.</value>
+  </data>
+  <data name="General_UnkownEntity" xml:space="preserve">
+    <value>There is no record of this {0}.</value>
+  </data>
+  <data name="General_User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="General_Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="General_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="Home_Index_Subtitle" xml:space="preserve">
+    <value>Welcome!</value>
+  </data>
+  <data name="Home_Index_Title" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="JTable_AddNewRecord" xml:space="preserve">
+    <value>Add new record</value>
+  </data>
+  <data name="General_AreYouSure" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="General_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="JTable_CanNotDeleteRecords" xml:space="preserve">
+    <value>Can not delete {0} of {1} records!</value>
+  </data>
+  <data name="JTable_CanNotLoadOptionsFor" xml:space="preserve">
+    <value>Can not load options for field {0}</value>
+  </data>
+  <data name="General_Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="JTable_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="JTable_DeleteConfirmation" xml:space="preserve">
+    <value>This record will be deleted.</value>
+  </data>
+  <data name="JTable_DeleteProggress" xml:space="preserve">
+    <value>Deleting {0} records, processing...</value>
+  </data>
+  <data name="JTable_Deleting" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="JTable_Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="JTable_EditRecord" xml:space="preserve">
+    <value>Edit Record</value>
+  </data>
+  <data name="General_Error" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="JTable_Filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
+  <data name="JTable_GoToPageLabel" xml:space="preserve">
+    <value>Go to page</value>
+  </data>
+  <data name="JTable_LoadingMessage" xml:space="preserve">
+    <value>Loading....</value>
+  </data>
+  <data name="JTable_LoadRecords" xml:space="preserve">
+    <value>Load records</value>
+  </data>
+  <data name="JTable_NoDataAvailable" xml:space="preserve">
+    <value>No data available!</value>
+  </data>
+  <data name="JTable_PageSizeChangeLabel" xml:space="preserve">
+    <value>Row count</value>
+  </data>
+  <data name="JTable_PagingInfo" xml:space="preserve">
+    <value>Showing {0}-{1} of {2}</value>
+  </data>
+  <data name="General_Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="General_Saving" xml:space="preserve">
+    <value>Saving</value>
+  </data>
+  <data name="General_Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="JTable_ServerCommunicationError" xml:space="preserve">
+    <value>An error occured while communicating to the server.</value>
+  </data>
+  <data name="Log_AddedANewEntity" xml:space="preserve">
+    <value>Added a new {0}: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_Created" xml:space="preserve">
+    <value>Created</value>
+  </data>
+  <data name="Log_DeleteAnExistingEntity" xml:space="preserve">
+    <value>Deleted a(n) {0}: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_Deleted" xml:space="preserve">
+    <value>Deleted</value>
+  </data>
+  <data name="Log_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Log_Edited" xml:space="preserve">
+    <value>Edited</value>
+  </data>
+  <data name="Log_EditedAnExisting" xml:space="preserve">
+    <value>Edited an existing {0}, these changes have been made: &lt;br/&gt;{1}</value>
+  </data>
+  <data name="Log_EntityHistory" xml:space="preserve">
+    <value>Entity history</value>
+  </data>
+  <data name="Log_EntityName" xml:space="preserve">
+    <value>Entity name</value>
+  </data>
+  <data name="Log_HistoryOf" xml:space="preserve">
+    <value>History of {0}</value>
+  </data>
+  <data name="Log_Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="Log_PropertyValue" xml:space="preserve">
+    <value>{0}: {1}&lt;br/&gt;</value>
+  </data>
+  <data name="Log_PropertyChangedFromTo" xml:space="preserve">
+    <value>Property '{0}' changed from '{1}' to '{2}'&lt;br/&gt;</value>
+  </data>
+  <data name="Log_TableTitle" xml:space="preserve">
+    <value>Activity log</value>
+  </data>
+  <data name="Log_Timestamp" xml:space="preserve">
+    <value>Timestamp</value>
+  </data>
+  <data name="General_View" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="General_Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="General_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="General_Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Role_ModuleAccessLevel" xml:space="preserve">
+    <value>{0} access level</value>
+  </data>
+  <data name="Role_Name" xml:space="preserve">
+    <value>Role name</value>
+  </data>
+  <data name="User_ActivitiesOf" xml:space="preserve">
+    <value>Activities of {0}</value>
+  </data>
+  <data name="User_Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="User_EmployeeID" xml:space="preserve">
+    <value>Employee ID</value>
+  </data>
+  <data name="User_FullName" xml:space="preserve">
+    <value>Fullname</value>
+  </data>
+  <data name="User_NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+  <data name="User_Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="User_UserName" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="General_Activities" xml:space="preserve">
+    <value>activities</value>
+  </data>
+  <data name="General_Modules" xml:space="preserve">
+    <value>modules</value>
+  </data>
+  <data name="Role_AddFunction" xml:space="preserve">
+    <value>Add a function</value>
+  </data>
+  <data name="Role_AddFunctionTo" xml:space="preserve">
+    <value>Add function to {0}</value>
+  </data>
+  <data name="Role_Function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="General_AvailableEntities" xml:space="preserve">
+    <value>Available {0}</value>
+  </data>
+  <data name="Log_PropertyChanged" xml:space="preserve">
+    <value>Property {0} has been modified.</value>
+  </data>
+  <data name="General_Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="General_Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="General_Languages" xml:space="preserve">
+    <value>Languages</value>
+  </data>
+  <data name="General_FileNotAnImage" xml:space="preserve">
+    <value>The file is not an image.</value>
+  </data>
+  <data name="General_Image" xml:space="preserve">
+    <value>Image</value>
+  </data>
+  <data name="General_UnsupportedImageFormat" xml:space="preserve">
+    <value>Images of type '{0}' are not supported.</value>
+  </data>
+  <data name="General_Upload" xml:space="preserve">
+    <value>Upload</value>
+  </data>
+  <data name="Image_Filename" xml:space="preserve">
+    <value>Filename</value>
+  </data>
+  <data name="Image_Format" xml:space="preserve">
+    <value>Image Format</value>
+  </data>
+  <data name="Image_Delete" xml:space="preserve">
+    <value>Delete image</value>
+  </data>
+  <data name="Image_ViewLarger" xml:space="preserve">
+    <value>View larger image</value>
+  </data>
+  <data name="General_DeleteSelected" xml:space="preserve">
+    <value>Delete selected</value>
+  </data>
+  <data name="JTable_AddNew" xml:space="preserve">
+    <value>Add new {0}</value>
+  </data>
+  <data name="JTable_DeleteConfirmationMulti" xml:space="preserve">
+    <value>These records will be deleted.</value>
+  </data>
+  <data name="JTable_Edit" xml:space="preserve">
+    <value>Edit {0}</value>
+  </data>
+  <data name="JTable_FormCount" xml:space="preserve">
+    <value>Form count</value>
+  </data>
+  <data name="General_Remaining" xml:space="preserve">
+    <value>Remaining</value>
+  </data>
+  <data name="General_Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="General_Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="General_ConfirmAddition" xml:space="preserve">
+    <value>Are you sure you want to add the following {0}?</value>
+  </data>
+  <data name="General_ErrorPleaseTryAgain" xml:space="preserve">
+    <value>An error has occured, please try again.</value>
+  </data>
+  <data name="General_Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="General_AddTo" xml:space="preserve">
+    <value>Add to {0}</value>
+  </data>
+  <data name="General_Instructions" xml:space="preserve">
+    <value>Instructions</value>
+  </data>
+  <data name="General_Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="General_Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="General_Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
+  <data name="General_Download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="General_PreparingDownload" xml:space="preserve">
+    <value>Preparing your document, please wait...</value>
+  </data>
+  <data name="General_EntityNotExist" xml:space="preserve">
+    <value>{0} {1} does not exist.</value>
+    <comment>{0} = Entity type, {1} entity name. Country Mofrika does not exist.</comment>
+  </data>
+  <data name="General_ConfirmCancel" xml:space="preserve">
+    <value>Do you want to cancel?</value>
+  </data>
+  <data name="General_DeleteItem" xml:space="preserve">
+    <value>Deleting item</value>
+  </data>
+  <data name="General_ClearFields" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="General_Amount" xml:space="preserve">
+    <value>Amount</value>
+  </data>
+  <data name="General_Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="General_From" xml:space="preserve">
+    <value>From</value>
+  </data>
+  <data name="General_Till" xml:space="preserve">
+    <value>Till</value>
+  </data>
+  <data name="General_Ok" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="Image_Select" xml:space="preserve">
+    <value>Select image</value>
+  </data>
+  <data name="General_FailedMultiDelete" xml:space="preserve">
+    <value>Failed to delete one or more of the selected items.</value>
+  </data>
+  <data name="General_AccessDenied" xml:space="preserve">
+    <value>Access denied!</value>
+  </data>
+  <data name="General_Warning" xml:space="preserve">
+    <value>Warning</value>
+  </data>
+  <data name="General_PropertyIsNotUnique" xml:space="preserve">
+    <value>The property {0} is not unique.</value>
+  </data>
+  <data name="General_File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Error_NoRowsSelected" xml:space="preserve">
+    <value>No rows selected</value>
+  </data>
+  <data name="General_AddX" xml:space="preserve">
+    <value>Add {0}</value>
+  </data>
+  <data name="General_InvalidDate" xml:space="preserve">
+    <value>Invalid date supplied.</value>
+  </data>
+  <data name="General_Find" xml:space="preserve">
+    <value>Find {0}</value>
+  </data>
+  <data name="User_MyAccount" xml:space="preserve">
+    <value>My account</value>
+  </data>
+  <data name="General_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="General_SelectedXAdded" xml:space="preserve">
+    <value>The selected {0} have been succesfully added.</value>
+  </data>
+  <data name="General_SelectedXPartiallyAdded" xml:space="preserve">
+    <value>The selected {0} have been partially added.</value>
+  </data>
+  <data name="General_Step1" xml:space="preserve">
+    <value>Step 1</value>
+  </data>
+  <data name="General_Step2" xml:space="preserve">
+    <value>Step 2</value>
+  </data>
+  <data name="General_Archived" xml:space="preserve">
+    <value>Archived</value>
+  </data>
+  <data name="General_SelectedX" xml:space="preserve">
+    <value>Selected {0}</value>
+  </data>
+  <data name="General_Files" xml:space="preserve">
+    <value>Files</value>
+  </data>
+  <data name="Error_FileAlreadyExists" xml:space="preserve">
+    <value>The file {0} already exists.</value>
+  </data>
+  <data name="Error_UploadFailed" xml:space="preserve">
+    <value>Upload failed.</value>
+  </data>
+  <data name="General_NoDataAvailableYet" xml:space="preserve">
+    <value>There's no data available yet.</value>
+  </data>
+  <data name="General_Processing" xml:space="preserve">
+    <value>Processing...</value>
+  </data>
+  <data name="General_Change" xml:space="preserve">
+    <value>Change</value>
+  </data>
+  <data name="General_Date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="General_Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Log_NoValue" xml:space="preserve">
+    <value>No value</value>
+  </data>
+  <data name="General_ForgottenPassword" xml:space="preserve">
+    <value>Forgot your password? Please contact the administrators.</value>
+  </data>
+  <data name="General_WelcomeTo" xml:space="preserve">
+    <value>Welcome to {0}</value>
+  </data>
+  <data name="Day_Friday" xml:space="preserve">
+    <value>Friday</value>
+  </data>
+  <data name="Day_Monday" xml:space="preserve">
+    <value>Monday</value>
+  </data>
+  <data name="Day_Saturday" xml:space="preserve">
+    <value>Saturday</value>
+  </data>
+  <data name="Day_Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="Day_Thursday" xml:space="preserve">
+    <value>Thursday</value>
+  </data>
+  <data name="Day_Tuesday" xml:space="preserve">
+    <value>Tuesday</value>
+  </data>
+  <data name="Day_Wednesday" xml:space="preserve">
+    <value>Wednesday</value>
+  </data>
+  <data name="Drive_FreeSpace" xml:space="preserve">
+    <value>Free space</value>
+  </data>
+  <data name="Drive_Label" xml:space="preserve">
+    <value>Label</value>
+  </data>
+  <data name="Drive_TotalSpace" xml:space="preserve">
+    <value>Total space</value>
+  </data>
+  <data name="Drive_UsedSpace" xml:space="preserve">
+    <value>Used space</value>
+  </data>
+  <data name="General_Drive" xml:space="preserve">
+    <value>Drive</value>
+  </data>
+  <data name="General_Time" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="General_Backups" xml:space="preserve">
+    <value>Backups</value>
+  </data>
+  <data name="Backup_NetworkPassword" xml:space="preserve">
+    <value>Networklocation password</value>
+  </data>
+  <data name="Backup_NetworkUsername" xml:space="preserve">
+    <value>Networklocation user name</value>
+  </data>
+  <data name="Backup_ServerPassword" xml:space="preserve">
+    <value>Server password</value>
+  </data>
+  <data name="Backup_ServerUsername" xml:space="preserve">
+    <value>Server user name</value>
+  </data>
+  <data name="Backup_Path" xml:space="preserve">
+    <value>Path</value>
+  </data>
+  <data name="General_ChangesSuccessfullySaved" xml:space="preserve">
+    <value>De veranderingen zijn succesvol opgeslagen.</value>
+  </data>
+  <data name="Backup_Days" xml:space="preserve">
+    <value>Backups days</value>
+  </data>
+  <data name="Backup_MinFreeSpace" xml:space="preserve">
+    <value>Minimum free space</value>
+  </data>
+  <data name="Backup_TTL" xml:space="preserve">
+    <value>Time to live</value>
+  </data>
+  <data name="Disk_CurrentUsage" xml:space="preserve">
+    <value>Current disk usage</value>
+  </data>
+  <data name="Disk_InsufficientSpace" xml:space="preserve">
+    <value>There is less ({0} GB) than the minimum disk space requirements available. New backups will not be created.</value>
+  </data>
+  <data name="Disk_SufficientSpace" xml:space="preserve">
+    <value>There is {0} GB disk space available.</value>
+  </data>
+  <data name="General_Weeks" xml:space="preserve">
+    <value>Weeks</value>
+  </data>
+  <data name="Settings_General" xml:space="preserve">
+    <value>General settings</value>
+  </data>
+  <data name="Settings_Network" xml:space="preserve">
+    <value>Network settings</value>
+  </data>
+  <data name="Backup_NetworkShare" xml:space="preserve">
+    <value>Network share</value>
+  </data>
+  <data name="Backup_TestFailed" xml:space="preserve">
+    <value>The provided network settings are incorrect.</value>
+  </data>
+  <data name="Backup_TestSettings" xml:space="preserve">
+    <value>Test settings</value>
+  </data>
+  <data name="Backup_TestSuccess" xml:space="preserve">
+    <value>Settings are correct!</value>
+  </data>
+  <data name="Backup_Failed" xml:space="preserve">
+    <value>Failed to create a full backup of the database. Something went wrong.</value>
+  </data>
+  <data name="Backup_FailedDisk" xml:space="preserve">
+    <value>There is not enough free disk space available. Could not create backup.</value>
+  </data>
+  <data name="Backup_FailedNetwork" xml:space="preserve">
+    <value>Failed to connect with the network share. Could not create backup.</value>
+  </data>
+  <data name="Backup_Success" xml:space="preserve">
+    <value>Successfully created a full backup of the database.</value>
+  </data>
+  <data name="General_AdditionalInfo" xml:space="preserve">
+    <value>Additional info</value>
+  </data>
+  <data name="General_AppLogs" xml:space="preserve">
+    <value>App logs</value>
+  </data>
+  <data name="General_Backup" xml:space="preserve">
+    <value>Backup</value>
+  </data>
+  <data name="General_Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Warning_ErrorsDetected" xml:space="preserve">
+    <value>Errors have been detected!</value>
+  </data>
+  <data name="Disk_FreeGB" xml:space="preserve">
+    <value>{0} GB free of {1} GB</value>
+  </data>
+  <data name="Backup_Now" xml:space="preserve">
+    <value>Backup now</value>
+  </data>
+  <data name="Error_UserWithDeletedRole" xml:space="preserve">
+    <value>There are still users left with the role you wish to delete. A role can only be deleted when it is no longer used by any users.</value>
+  </data>
+  <data name="General_Maintenance" xml:space="preserve">
+    <value>Maintenance</value>
+  </data>
+  <data name="General_Types" xml:space="preserve">
+    <value>Types</value>
+  </data>
+  <data name="General_AppLog" xml:space="preserve">
+    <value>App log</value>
+  </data>
+  <data name="General_Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="General_Info" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="General_Warnings" xml:space="preserve">
+    <value>Warnings</value>
+  </data>
+  <data name="Backup_LastFailed" xml:space="preserve">
+    <value>Last backup failed</value>
+  </data>
+  <data name="General_NoProblems" xml:space="preserve">
+    <value>No problems detected</value>
+  </data>
+  <data name="Backup_InProgress" xml:space="preserve">
+    <value>Backup in progress...</value>
+  </data>
+  <data name="Backup_Restore" xml:space="preserve">
+    <value>Restore database</value>
+  </data>
+  <data name="Backup_RestoreFailed" xml:space="preserve">
+    <value>Failed to restore the database.</value>
+  </data>
+  <data name="Backup_RestoreInProgress" xml:space="preserve">
+    <value>Backup restore is in progress..</value>
+  </data>
+  <data name="Backup_RestoreSuccess" xml:space="preserve">
+    <value>Successfully restored the database.</value>
+  </data>
+  <data name="Backup_RestoreWarning" xml:space="preserve">
+    <value>Are you sure you wish to restore to the selected backup?</value>
+  </data>
+  <data name="Language_Dutch" xml:space="preserve">
+    <value>Dutch</value>
+  </data>
+  <data name="Language_English" xml:space="preserve">
+    <value>English</value>
+  </data>
+</root>

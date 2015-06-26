@@ -1,0 +1,89 @@
+﻿<#@ template  debug="true" hostSpecific="true" #>
+<#@ output extension=".d.ts"#>
+<#@ Assembly Name="System.Core" #>
+<#@ assembly name="System.Xml" #>
+<#@ assembly name="System.Xml.Linq" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Xml" #>
+<#@ import namespace="System.Xml.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Text.RegularExpressions" #>
+<#
+	var projectPath = Host.ResolveAssemblyReference("$(ProjectDir)");
+	var resxFileName = projectPath + @"Languages\Global.resx";
+    
+    if (!File.Exists(resxFileName)) {
+        this.Error("Unable to find RESX file. Please check T4 variable. Current path is '" + resxFileName + "'");
+    }
+    else
+    {
+#>
+declare module Resources {
+	var Global: Resources.Strings;
+	
+	interface Strings {
+<#
+        this.PushIndent("    ");
+        foreach (var el in GetElements(resxFileName, "data"))
+        {
+            OutputElement(this, el);
+        }
+        this.PopIndent();
+#>
+	}
+}
+<#
+    }
+#>
+<#+
+    static void OutputElement(GeneratedTextTransformation tt, XElement el)
+    {
+        var name = el.Attribute("name").Value;
+        var value = el.Element("value").Value;
+		            
+        var matches = Regex.Matches(value, @"\{[0-9]+\}");
+        var variables = new List<string>();
+        
+		foreach (Match match in matches)
+        {
+            var param = match.Value;
+            var paramIndex = Int32.Parse(param.Substring(1, param.Length - 2));
+            var paramName = string.Format("val{0}:string", paramIndex);
+
+            if (!variables.Contains(paramName)) variables.Add(paramName);            
+        }
+
+        if (variables.Any())
+        {
+            tt.WriteLine("{0}({1}): string;", name, string.Join(", ", variables.ToArray()));
+        }
+        else
+        {
+			tt.WriteLine("{0}: string;", name);            
+        }
+    }
+
+    static IEnumerable<XElement> GetElements(string inputFile, string elementName)
+    {
+        using (var reader = XmlReader.Create(inputFile))
+        {
+            reader.MoveToContent();
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Element)
+                {
+                    if (reader.Name == elementName)
+                    {
+                        XElement el = XNode.ReadFrom(reader) as XElement;
+                        if (el != null)
+                        {
+                            yield return el;
+                        }
+                    }
+                }
+            }
+        }
+    }
+#>

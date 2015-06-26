@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+ 
+@{
+    string lang = ViewBag.Lang;
+    switch(lang)
+    {
+        case "nl-nl":
+            <script type="text/javascript" src="@Url.Content("~/Scripts/validation-engine/js/languages/jquery.validationEngine-nl.js")"></script>
+            break;
+            
+        default:
+            <script type="text/javascript" src="@Url.Content("~/Scripts/validation-engine/js/languages/jquery.validationEngine-en.js")"></script>            
+            break;
+    }
+}     

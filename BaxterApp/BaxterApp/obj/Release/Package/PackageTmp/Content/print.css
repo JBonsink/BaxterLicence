@@ -1,0 +1,118 @@
+﻿body {
+    margin:0;
+    padding:0;
+}
+
+@page proud {
+    margin: 0;
+    padding: 0;
+    size: A4 !important;
+}
+
+@page fds {
+    margin: 0;
+    padding: 0;
+    size: 21.5cm 27.9cm portrait;
+}
+
+
+h1 {
+    text-align: center;
+    font-size: large;
+    border-bottom: 3px solid #000;
+    margin:3px;
+}
+
+h2 {
+    text-align: center;
+    font-size: large;
+    margin: 3px;
+}
+
+p {
+    text-align: center;
+    margin: 3px;
+}
+
+.page-break {
+    page-break-after:always;
+    clear:left
+}
+
+.proud-page {
+    page:proud;
+    display:block;
+    margin: 0.8cm 0cm 0cm 3.6cm;
+    padding: 0;
+    width: 13.3cm;
+    height: 28.9cm;
+    overflow:hidden;
+}
+
+.fds-page {
+    page:fds;
+    display:block;
+    margin: 0.9cm 0cm 0cm 5cm;
+    padding: 0;
+    width: 11.3cm;
+}
+
+.proud-label-large {
+    display: block;
+    float: left;
+    width: 5.8cm;
+    height: 3.8cm;
+    margin: 0cm 0cm 2.1cm 0cm;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: aqua;    
+}
+
+.proud-label-small {
+    display: block;
+    float: left;
+    width: 4.8cm;
+    height: 2.8cm;
+    margin: 0cm 0cm 3.1cm 2.7cm;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: aqua;    
+}
+
+.fds-label-large {
+    display: block;
+    float: left;
+    width: 5.9cm;
+    height: 3.8cm;
+    margin: 0cm 0cm 0.9cm 0cm;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: aqua;
+}
+
+.fds-label-small {
+    display: block;
+    float: left;
+    width: 4.9cm;
+    height: 1.45cm;
+    margin: 0cm 0cm 0cm 0.5cm;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: aqua;
+}
+
+.fds-label-front {
+    display: block;
+    float: left;
+    width: 3.0cm;
+    height: 0.8cm;
+    margin: 0.3cm 0cm 0.95cm 1.45cm;
+    padding: 0;
+    overflow: hidden;
+
+    background-color: aqua;
+}

@@ -1,0 +1,60 @@
+﻿@using Baxter.Utilities;
+
+@{
+    ViewBag.Title = Resources.Global.Log_EntityHistory;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+                                           
+<div id="logTable" class="jtable"></div>
+
+<script>    
+    $(function () {
+        var logTable = $("#logTable");
+        var fields = downloadObject("@Url.Action("GetFields")");
+        var actions = downloadObject("@Url.Action("GetActions")");
+                
+        var options = {
+            title: "@ViewBag.Title",
+            defaultSorting: "Timestamp DESC",
+            actions: actions,
+            fields: fields,
+            searchFields: [
+                {
+                    column: "Module",
+                    label: "@Resources.Global.Log_Module",
+                    type: SearchTypes.Dropdown,
+                    operator: Operators.Equals,                                        
+                    defaultValue: "@StringFormatters.All(Resources.Global.General_Modules)",
+                    dropdown: 
+                    {
+                        remote: "@Url.Action("GetModuleOptions")",
+                    },
+                },
+                {
+                    column: "Activity",
+                    label: "@Resources.Global.Log_Activity",
+                    type: SearchTypes.Dropdown,
+                    operator: Operators.Equals,                    
+                    defaultValue: "@StringFormatters.All(Resources.Global.General_Modules)",
+                    dropdown: 
+                    {
+                        remote: "@Url.Action("GetActivityOptions")",
+                    },
+                },
+                {
+                    column: "UserID",
+                    label: "@Resources.Global.User_UserName",
+                    type: SearchTypes.TypeAhead,
+                    operator: Operators.Equals,
+                    typeAhead: {
+                        remote: "@Url.Action("GetUserSuggestions", "User")",
+                        prefetch: "@Url.Action("GetUserSuggestions", "User")"
+                    }
+                }
+            ]
+        };
+        options = $.extend(GetDefaultOptions(actions), options)         
+        logTable.jtable(options);
+        logTable.jtable('load');
+    });
+</script>

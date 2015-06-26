@@ -1,0 +1,34 @@
+﻿@using Baxter.Constants
+
+@{
+    ViewBag.Title = Resources.Global.General_Roles;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<div id="roleTable" class="jtable"></div>
+
+<script>
+
+    $(function () {
+        downloadObjects(
+            "@Url.Action("GetActions", "Log")",
+            "@Url.Action("GetFields", "Log")",
+            "@Url.Action("GetActions")",
+            "@Url.Action("GetFields")").done(function (logActions, logFields, roleActions, roleFields) {
+
+            var roleTable = $("#roleTable");
+            delete logFields["EntityName"];
+                
+            roleFields.Name.width = "99%";
+            for (var i in roleFields) roleFields[i].type = FieldTypes.Radiobutton;
+            var roleOptions = {
+                title: "@ViewBag.Title",
+                defaultSorting: "Name ASC",
+                fields: AddEntityLogField(roleFields, logActions, logFields, "Name", "@((int)Module.Role)")
+            };
+            roleOptions = $.extend(GetDefaultOptions(roleActions), roleOptions);
+            roleTable.jtable(roleOptions);
+            roleTable.jtable("load");
+        }); 
+    });
+</script>

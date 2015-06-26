@@ -1,0 +1,273 @@
+﻿div.scrollable-table {
+   overflow-y: auto;
+   overflow-x: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+}
+.table-striped>tbody>tr:nth-child(odd)>td, .table-striped>tbody>tr:nth-child(odd)>th {
+    /*background-color: #EEEEEE;*/
+}
+
+.table-container {
+    margin-top: 30px;
+}
+    
+div.panel > div.panel-heading > h3 {
+    margin-top: 10px;
+}   
+
+table.table > thead {
+    /*background-color: #f5f5f5;*/
+}
+
+table.table i, table.table img {
+    cursor: pointer;
+}
+
+div.search-bar .checkbox {       
+    min-height: 34px;   
+    line-height: 34px;
+}
+
+table.table-sortable thead {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+div.panel > table.table-bordered {
+    border-color: inherit;
+    border-style: solid;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+}
+
+table.table-sortable thead th.jtable-column-header:hover {
+    background: #efefef;
+}
+
+table.table-sortable th {
+  position: relative;
+}
+
+table.table-sortable span.sign {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    font-size: 12px;
+    margin-top: -10px;
+    color: #bfbfc1;
+}
+
+table.table-sortable span.arrow, span.reversed {
+    border-style: solid;
+    border-width: 5px;
+    font-size: 0;
+    border-color: #ccc transparent transparent transparent;
+    line-height: 0;
+    height: 0;
+    width: 0;
+    margin-top: -2px;
+}
+
+    table.table-sortable span.arrow.up {
+        border-color: transparent transparent #ccc transparent;
+        margin-top: -7px;
+    }
+
+table.table-sortable span.reversed {
+    border-color: transparent transparent #ccc transparent;
+    margin-top: -7px;
+}
+
+    table.table-sortable span.reversed.up {
+        border-color: #ccc transparent transparent transparent;
+        margin-top: -2px;
+    }
+                
+table.table-sortable span.az:before {
+    content: "a .. z";
+}
+
+table.table-sortable span.az.up:before {
+    content: "z .. a";
+}
+
+table.table-sortable span.AZ:before {
+    content: "A .. Z";
+}
+
+table.table-sortable span.AZ.up:before {
+    content: "Z .. A";
+}
+
+table.table-sortable span._19:before {
+    content: "1 .. 9";
+}
+
+table.table-sortable span._19.up:before {
+    content: "9 .. 1";
+}
+
+table.table div.jtable-column-resize-handler {
+  position: absolute;
+  height: 100%;
+  width: 8px;
+  right: -8px;
+  top: -2px;
+  z-index: 2;
+  cursor: col-resize;
+}
+
+.panel > .panel-heading {
+    position: relative;
+}
+
+.jtable-toolbar {
+    position: absolute;
+    right: 30px;
+    top: 17px;
+}
+
+div.jtable-child-table-container > .panel > .panel-heading > .jtable-toolbar {
+    right: 15px;
+    top: 14px;
+}
+
+div.jtable-navigation > .form-group {
+    margin-right: 20px;
+}
+
+div.jtable-navigation {
+    padding: 10px;
+    position: relative;
+    border-top: inherit;
+}
+
+div.jtable-navigation > .form-group > .pagination{
+    margin: 0px;
+}
+
+div.jtable-contextmenu-overlay {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+div.jtable-column-resize-bar {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+  position: absolute;
+  display: none;
+  width: 1px;
+  background-color: #000;
+}
+div.jtable-column-selection-container {
+  position: absolute;
+  display: none;
+  border: 1px solid #C8C8C8;
+  background: #fff;
+  color: #000;
+  padding: 5px;
+}
+
+div.jtable-column-selection-container ul.jtable-column-select-list {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+div.jtable-column-selection-container ul.jtable-column-select-list li {
+  margin: 0px;
+  padding: 2px 0px;
+}
+div.jtable-column-selection-container ul.jtable-column-select-list li label span {
+  position: relative;
+  top: -1px;
+  margin-left: 4px;
+}
+div.jtable-column-selection-container ul.jtable-column-select-list li input[type="checkbox"] {
+  cursor: pointer;
+}
+
+div.jtable-busy-message {
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #428bca;
+    border-radius: 4px;
+    padding: 5px;    
+    background-color: #B4CDE0;
+}
+
+div.jtable-busy-message {
+    cursor: wait;
+    z-index: 999;
+    position: absolute;
+    margin: 5px;
+}
+
+div.jtable-busy-message > .progress {
+    margin-bottom: 0px;
+}
+
+div.jtable-busy-panel-background {
+    opacity: 0.1;
+    filter: alpha(opacity=50);
+    z-index: 998;
+    position: absolute;
+    background-color: #000;
+}
+
+div.jtable-busy-panel-background.jtable-busy-panel-background-invisible {
+  background-color: transparent;
+}
+    
+.table-dialog > .modal-dialog{
+  width: 80%;  
+}
+
+.table-dialog > .modal-dialog > .modal-content > .modal-body{
+  padding: 0;
+}
+
+.table-dialog .panel {
+    margin-bottom: 0px;
+}
+
+.table-dialog .modal-footer {
+    margin-top: 0px;
+}
+
+.table-dialog > .modal-dialog > .modal-content > .modal-body .bootstrap-dialog-message {
+    font-size: 14px;
+}
+      
+.search-bar .form-inline .form-control {
+    width: 100%;
+}
+
+.form-inline .input-group .input-group-addon {
+    width: 55px;
+}
+
+.jtable-navigation select {
+    padding: 6px 6px;
+}
+
+.jtable/*, .jtable, .jtable-child-table-container*/ {
+    visibility: hidden;
+    opacity: 0;
+}
+
+tr {
+    -webkit-transition: background 2s ease-in-out;
+
+    -moz-transition: background 2s ease-in-out;
+    -ms-transition: background 2s ease-in-out;
+    -o-transition: background 2s ease-in-out;       
+}

@@ -1,0 +1,14 @@
+BaxterApp/BaxterApp/Scripts/enums.js
+*.map
+BaxterApp/BaxterApp/Scripts/constants.js
+BaxterApp/BaxterApp/Scripts/Utilities/Animations.js
+BaxterApp/BaxterApp/Scripts/Utilities/Ajax.js
+BaxterApp/BaxterApp/Scripts/Utilities/Modals.js
+BaxterApp/BaxterApp/Scripts/Utilities/kTable.js
+BaxterApp/BaxterApp/Scripts/Utilities/utilities.js
+BaxterApp/BaxterApp/Scripts/views/ApplogView.js
+BaxterApp/BaxterApp/Scripts/views/BackupView.js
+BaxterApp/BaxterApp/Scripts/views/DriveView.js
+BaxterApp/BaxterApp/Scripts/views/LogView.js
+BaxterApp/BaxterApp/Scripts/views/RoleView.js
+BaxterApp/BaxterApp/Scripts/views/UserView.js

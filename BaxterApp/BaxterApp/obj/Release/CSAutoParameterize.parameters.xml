@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BaxterContext-Web.config Connection String" description="BaxterContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=10.112.40.49\NLUT_SQLSERVER20;Initial Catalog=BaxterBase;User ID=sa;Password=automed;MultipleActiveResultSets=True;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Jos\\Projects\\Yoolis\\BaxterBase\\BaxterApp\\BaxterApp\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BaxterContext']/@connectionString" />
+  </parameter>
+</parameters>

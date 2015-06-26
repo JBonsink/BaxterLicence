@@ -1,0 +1,99 @@
+﻿@using Baxter
+@using Baxter.Constants
+@using Baxter.Utilities
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>@ViewBag.Title</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link rel="shortcut icon" href="@Url.Content(AppSettings.Icon)" type="image/x-icon" />
+
+        <meta name="viewport" content="width=device-width" />
+                          
+        @Scripts.Render(
+            "~/bundles/jquery", 
+            "~/bundles/bootstrap",
+            "~/bundles/jtable")
+
+        <link rel="stylesheet" type="text/css" href="~/Scripts/Uploadifive/uploadifive.css" />        
+        <script type="text/javascript" src="~/Scripts/Uploadifive/jquery.uploadifive.js"></script>
+        <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap-dialog.less")">
+        <link id="style" rel="stylesheet" type="text/css" href="@Url.Content(General.GetUserStyle())">
+                                                                        
+        @Styles.Render(
+            "~/bundles/css",
+            "~/bundles/jtableStyles")         
+                  
+        @{ Html.RenderAction("ValidationEngineLanguage", "Partial"); } 
+                                      
+        <script>
+    Resources.AddGlobalResources([
+        { name: "General_Yes", value: "@Resources.Global.General_Yes" },
+        { name: "General_No", value: "@Resources.Global.General_No" },
+        { name: "General_Cancel", value: "@Resources.Global.General_Cancel" },
+        { name: "General_ConfirmCancel", value: "@Resources.Global.General_ConfirmCancel" },
+        { name: "General_ClearFields", value: "@Resources.Global.General_ClearFields" },
+        { name: "General_DeleteItem", value: "@Resources.Global.General_DeleteItem" },
+        { name: "General_Close", value: "@Resources.Global.General_Close" },
+        { name: "General_SelectEntity", value: "@Resources.Global.General_SelectEntity" },
+        { name: "General_SelectedX", value: "@Resources.Global.General_SelectedX" },
+        { name: "Log_EntityHistory", value: "@Resources.Global.Log_EntityHistory" },
+        { name: "Log_HistoryOf", value: "@Resources.Global.Log_HistoryOf" },
+        { name: "General_Search", value: "@Resources.Global.General_Search" },
+        { name: "General_LoadingMessage", value: '@Resources.Global.JTable_LoadingMessage' },
+        { name: "General_Warning", value: '@Resources.Global.General_Warning' },
+        { name: "General_Success", value: '@Resources.Global.General_Success' },
+        { name: "General_Error", value: '@Resources.Global.General_Error' },
+        { name: "General_Till", value: "@Resources.Global.General_Till"},
+        { name: "Error_NoRowsSelected", value: '@Resources.Global.Error_NoRowsSelected' },
+        { name: "Uploadify_SelectFile", value: '@string.Format(Resources.Global.General_SelectEntity, Resources.Global.General_File)' },
+        { name: "JTable_ServerCommunicationError", value: "@Resources.Global.JTable_ServerCommunicationError" },
+    ]);
+
+    var jtableLocalization = {
+        serverCommunicationError: '@Resources.Global.JTable_ServerCommunicationError',
+        loadingMessage: '@Resources.Global.JTable_LoadingMessage',
+        noDataAvailable: '@Resources.Global.JTable_NoDataAvailable',
+        addNewRecord: '@Resources.Global.JTable_AddNewRecord',
+        editRecord: '@Resources.Global.JTable_EditRecord',
+        areYouSure: '@Resources.Global.General_AreYouSure',
+        deleteConfirmation: '@Resources.Global.JTable_DeleteConfirmation',
+        save: '@Resources.Global.General_Save',
+        saving: '@Resources.Global.General_Saving',
+        cancel: '@Resources.Global.General_Cancel',
+        deleteText: '@Resources.Global.JTable_Delete',
+        deleting: '@Resources.Global.JTable_Deleting',
+        error: '@Resources.Global.General_Error',
+        close: '@Resources.Global.General_Close',
+        cannotLoadOptionsFor: '@Resources.Global.JTable_CanNotLoadOptionsFor',
+        pagingInfo: '@Resources.Global.JTable_PagingInfo',
+        pageSizeChangeLabel: '@Resources.Global.JTable_PageSizeChangeLabel',
+        gotoPageLabel: '@Resources.Global.JTable_GoToPageLabel',
+        canNotDeletedRecords: '@Resources.Global.JTable_CanNotDeleteRecords',
+        deleteProggress: '@Resources.Global.JTable_DeleteProggress',
+        searchTitle: '@Resources.Global.General_Search',
+        loadRecords: '@Resources.Global.JTable_LoadRecords',
+        details: '@Resources.Global.JTable_Details',
+        formCount: '@Resources.Global.JTable_FormCount',
+        deleteMulti: '@Resources.Global.JTable_DeleteConfirmationMulti',
+    }
+        </script>
+
+        @Scripts.Render("~/bundles/utilities")
+        <script type="text/javascript">
+            $(function () {
+                loadingScreen.open();
+            });
+        </script>        
+        
+    </head>
+    
+    <body class="body">
+        @Html.Partial("_TopMenu")
+
+        @RenderBody()
+    </body>
+</html>

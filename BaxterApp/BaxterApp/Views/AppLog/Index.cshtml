@@ -1,0 +1,15 @@
+﻿@using Baxter.Constants;
+@using Baxter.Utilities;
+
+@{
+    ViewBag.Title = Resources.Global.General_AppLog;
+    Layout = "~/Views/Shared/_JTable_Normal.cshtml";
+}
+
+<div id="logTable" class="jtable"></div>
+
+<script src="~/Scripts/views/ApplogView.js"></script>
+<script>
+    var view = new ApplogView();
+</script>     
+

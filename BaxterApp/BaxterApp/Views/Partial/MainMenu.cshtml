@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+<script>
+    $(function () {
+        var collapseable = $('li.collapsed');
+
+        collapseable.click(function () {
+            $('.sub-menu.collapse.in').collapse('hide');
+        });
+    });
+</script>
+
+<ul class="nav navbar-stacked nav-side-menu">
+    <!--<li>@Html.ActionLink(Resources.Global.General_Home, "Index", "Home")</li>-->
+    @if (ViewBag.ViewUser)
+    {
+        <li data-toggle="collapse" data-target="#users" class="collapsed active">
+            <a href="#"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users<span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="users">
+            @if (ViewBag.ViewUser)
+            {
+                <li><a href="@Url.Action("Index", "User")"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users</a></li>
+            }            
+            @if (ViewBag.ViewRole)
+            {
+                <li><a href="@Url.Action("Index", "Role")"><i class="glyphicon glyphicon-education"></i> @Resources.Global.General_Roles</a></li>
+            }
+            @if (ViewBag.ViewLog)
+            {
+                <li><a href="@Url.Action("Index", "Log")"><i class="fa fa-align-justify"></i> @Resources.Global.General_Logs</a></li>
+            }            
+        </ul>
+    }
+    @if (ViewBag.ViewMaintenance)
+    {
+        <li data-toggle="collapse" data-target="#maintenance" class="collapsed active">
+            <a href="#"><i class="glyphicon glyphicon-wrench"></i> @Resources.Global.General_Maintenance<span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="maintenance">
+            <li><a href="@Url.Action("Index", "Backup")"><i class="glyphicon glyphicon-export"></i>@Resources.Global.General_Backups</a></li>
+            <li><a href="@Url.Action("Index", "Drive")"><i class="fa fa-pie-chart"></i>@Resources.Global.General_Drive</a></li>
+            <li><a href="@Url.Action("Index", "AppLog")"><i class="fa fa-align-justify"></i>@Resources.Global.General_AppLog</a></li>
+        </ul>
+    }
+</ul>

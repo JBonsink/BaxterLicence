@@ -1,0 +1,21 @@
+﻿<#@ template debug="false" hostspecific="True" language="C#" #>
+<#@ assembly name="$(TargetDir)TypeLite.dll" #>
+<#@ assembly name="$(TargetDir)TypeLite.Net4.dll" #>
+<#@ assembly name="$(TargetDir)$(TargetFileName)" #> 
+<#@ import namespace="TypeLite" #> 
+<#@ import namespace="TypeLite.Net4" #> 
+<#@ import namespace="TypeLite.TsModels" #> 
+<#@output extension=".d.ts"#> 
+<#@include file="../../Manager.ttinclude"#>
+/// <reference path="ktable.d.ts" />
+/// <reference path="../models/models.d.ts" />
+<# var manager = Manager.Create(Host, GenerationEnvironment); #>
+<# 
+	TypeLite.TsMemberTypeFormatter formatter = (memberType, isMemberCollection) => String.Format("kTable.Field<{0}>", memberType.MemberInfo.DeclaringType);
+	var ts = TypeScript.Definitions().ForLoadedAssemblies()
+    .WithMemberTypeFormatter(formatter)
+    .WithModuleNameFormatter((name) => "Baxter.Fields");
+	#> 
+<#= ts.Generate(TsGeneratorOutput.Properties) #>
+<# manager.EndBlock(); #>
+<# manager.Process(true); #>

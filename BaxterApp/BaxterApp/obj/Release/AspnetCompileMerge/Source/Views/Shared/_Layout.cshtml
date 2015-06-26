@@ -1,0 +1,37 @@
+﻿@using Baxter
+@using Baxter.Constants
+@using Baxter.Utilities
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="@Url.Content(AppSettings.Icon) type="image/x-icon" />
+
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap", "~/bundles/utilities")
+    @Styles.Render("~/bundles/css")
+            
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/bootstrap-dialog.less")">
+    <link id="style" rel="stylesheet" type="text/css" href="@Url.Content(General.GetUserStyle())">
+</head>
+
+<body class="body">
+    @Html.Partial("_TopMenu")
+
+    <div class="wrapper body-inverse">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer-menu">        
+        <div class="container">
+            <footer>
+                @{ Html.RenderAction("MainMenu", "Partial"); }
+            </footer>
+        </div>
+    </div>
+</body>
+</html> 
+  

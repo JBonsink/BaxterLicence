@@ -1,0 +1,43 @@
+﻿@model Baxter.Models.Baxter.UserUpdatePasswordModel
+
+<script>
+    $(function () {
+        var statusMessage = "@ViewBag.StatusMessage";
+
+        if (statusMessage.length > 0) {
+            $('#success').text(statusMessage)
+                         .removeClass('hidden');
+        }
+    }); 
+</script>
+<div class="row hidden-xs">
+    <div class="col-md-4">
+        <h2>@Resources.Global.Account_Manage_Subtitle_Password</h2>
+
+        <p id="success" class="alert alert-success hidden"></p>
+
+        <div class="form">
+            <form action="@Url.Action("Manage", "Account")" method="post" role="form">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.CurrentPassword)
+                    @Html.PasswordFor(model => model.CurrentPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CurrentPassword)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.NewPassword)
+                    @Html.PasswordFor(model => model.NewPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.NewPassword)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ConfirmPassword)
+                    @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                </div>
+                <input class="btn btn-primary" type="submit" value="@Resources.Global.Account_Manage_Button_ChangePassword" />
+            </form>
+        </div>
+    </div>
+</div> 

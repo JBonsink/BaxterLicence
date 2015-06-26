@@ -1,0 +1,136 @@
+﻿@using Baxter
+@using Baxter.Constants
+@using Baxter.Utilities
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button id="menu-toggle" type="button" class="navbar-toggle collapsed pull-left" data-toggle="sidebar" data-target=".sidebar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="@Url.Action(AppSettings.DefaultPage.Action, AppSettings.DefaultPage.Controller)" class="navbar-brand">@AppSettings.Name</a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapse-top-menu">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="collapse-top-menu">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">                    
+                    <a href="#" class="dropdown-toggle f16" data-toggle="dropdown">
+                        <span class="flag @(UICulture == Languages.English ? "gb" : "nl")" style="margin: 1px 0;"></span>&nbsp;
+                        <span class="caret"></span>
+                    </a>                    
+                    <ul class="dropdown-menu f32" role="menu">
+                        <li role="presentation">
+                            <a role="menuitem" href="@Url.Action("Culture", "Settings", new { culture = Languages.English })">
+                                <span class="flag gb"></span>
+                                <span>&nbsp;@Resources.Global.Language_English</span>
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a role="menuitem" href="@Url.Action("Culture", "Settings", new { culture = Languages.Dutch })">
+                                <span class="flag nl"></span>
+                                <span>&nbsp;@Resources.Global.Language_Dutch</span>
+                            </a>
+                        </li>                        
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav hidden-sm hidden-xs">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Styles<span class="caret"></span></a>
+                    <ul id="styles" class="dropdown-menu" role="menu">
+                        <li id="default" class="info"><a>Default</a></li>
+                        <li id="baxter"><a>Baxter</a></li>
+                        <li id="cosmo"><a>Cosmo</a></li>
+                        <li id="flatly"><a>Flatly</a></li>
+                        <li id="paper"><a>Paper</a></li>
+                        <li id="simplex"><a>Simplex</a></li>
+                    </ul>
+                </li>
+            </ul>
+            @if (Request.IsAuthenticated)
+            {
+                <text>
+                    <p class="navbar-text hidden-xs">@Resources.Global.General_Hello! @Resources.Global.Account_Manage_LoggedInAs @User.Identity.Name.</p>
+                    <div class="user-controls">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                @Html.ActionLink(Resources.Global.User_MyAccount, "Manage", "Account")
+                            </li>
+                            <li>
+                                <a href="javascript:document.getElementById('logoutForm').submit()"><i class="fa fa-sign-out"></i> @Resources.Global.General_LogOff</a>
+
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                }
+                            </li>
+                        </ul>
+                    </div>
+                </text>
+            }
+
+            @if (Html.Action("HasPermission", new { function = FunctionName.Maintenance, permission = Permission.View }).ToString() == "True")
+            {
+                <div class="pull-right navbar-text hidden-xs">
+                    <a href="@Url.Action("Index", "AppLog")" id="app-health"></a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        updateAppHealth();
+
+        $('#styles').find('li').each(function () {
+            var selector = $(this);
+            selector.click(function () {
+                var styleName = selector.attr("id");
+                updateStyle(styleName);
+
+                $('#styles').find('li.alert-info').removeClass('alert-info');
+                selector.addClass('alert-info');
+
+                var styles = {};
+                if ($.cookie('style')) styles = JSON.parse($.cookie('style'));
+
+                styles['@User.Identity.Name'] = styleName;
+                $.cookie.raw = true;
+                $.cookie('style', JSON.stringify(styles), { path: '/' });
+            });
+        });
+
+        function updateStyle(styleName) {
+            var url = $('#style').attr('href');
+            url = url.replace(/bootstrap\.[a-z]*/, String.format("bootstrap.{0}", styleName));
+            $('#style').attr('href', url);
+        }
+
+        function updateAppHealth() {
+            var response = downloadObjects("@Url.Action("GetAppHealth", "AppLog")", "@Url.Action("GetBackupStatus", "AppLog")")
+                .done(function (appResponse, backupResponse) {
+                    var container = $('#app-health').parent();
+                    var appHealthMsg = $('#app-health');
+
+                    appHealthMsg.empty();
+
+                    if (backupResponse.Result == 'OK') appHealthMsg.append('<i class="fa fa-database text-success" data-toggle="tooltip" data-placement="left" title="@Resources.Global.General_NoProblems"/>');
+                    else appHealthMsg.append('<i class="fa fa-database text-danger" data-toggle="tooltip" data-placement="left" title="@Resources.Global.Backup_LastFailed"/>');
+
+                    if (appResponse.Result == 'OK') appHealthMsg.append(' | <i class="glyphicon glyphicon-ok-sign text-success" data-toggle="tooltip" data-placement="right" title="@Resources.Global.General_NoProblems"/>');
+                    else appHealthMsg.append(' | <i class="glyphicon glyphicon-warning-sign text-warning" data-toggle="tooltip" data-placement="right" title="@Resources.Global.Warning_ErrorsDetected"/>');
+
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            setTimeout(function () { updateAppHealth(); }, 60000);
+        }
+    });
+</script>

@@ -1,0 +1,21 @@
+﻿@using Baxter.Models
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Volumes</h1>
+
+<div id="drives" class="row">
+    <div rv-each-drive="Records" class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+        <h3 rv-text="drive.Name"></h3>
+        <canvas rv-id="index"></canvas>
+        <div class="alert alert-info" rv-text="drive.Status"></div>
+    </div>
+</div>
+
+<script src="~/Scripts/views/DriveView.js"></script>
+<script>
+    var view = new DriveView();
+</script>
