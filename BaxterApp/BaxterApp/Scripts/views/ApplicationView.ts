@@ -15,8 +15,8 @@ class ApplicationView {
                 logActions: kTable.Actions,
                 logFields: Baxter.Fields.Log,
                 applicationActions: kTable.Actions,
-                applicationFields: Baxter.Fields.Application) {
-                                
+                applicationFields: Baxter.Fields.Application) {                               
+                
                 delete logFields["EntityName"];
 
                 var applicationOptions = kTable.Utilities.createOptions({

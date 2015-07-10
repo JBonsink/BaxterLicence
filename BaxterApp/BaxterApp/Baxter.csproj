@@ -497,6 +497,7 @@
     <Content Include="Views\Backup\Index.cshtml" />
     <Content Include="Views\AppLog\Index.cshtml" />
     <Content Include="Views\Application\Index.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -608,6 +609,7 @@
     <Compile Include="Controllers\Baxter\AccountController.cs" />
     <Compile Include="Controllers\Baxter\BackupController.cs" />
     <Compile Include="Controllers\Baxter\BaseController.cs" />
+    <Compile Include="Controllers\Baxter\CustomerController.cs" />
     <Compile Include="Controllers\Baxter\DriveController.cs" />
     <Compile Include="Controllers\Baxter\FileController.cs" />
     <Compile Include="Controllers\Baxter\GenericController.cs" />
@@ -618,6 +620,7 @@
     <Compile Include="Controllers\Baxter\PrintController.cs" />
     <Compile Include="Controllers\Baxter\RoleController.cs" />
     <Compile Include="Controllers\Baxter\SettingsController.cs" />
+    <Compile Include="Controllers\Baxter\TestVController.cs" />
     <Compile Include="Controllers\Baxter\UserController.cs" />
     <Compile Include="Extensions\EnumHelper.cs" />
     <Compile Include="Extensions\ExtensionMethods.cs" />
@@ -722,11 +725,20 @@
     <Compile Include="Migrations\201506261130575_applicationAcc.Designer.cs">
       <DependentUpon>201506261130575_applicationAcc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201507101102566_Customers.cs" />
+    <Compile Include="Migrations\201507101102566_Customers.Designer.cs">
+      <DependentUpon>201507101102566_Customers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201507101141109_Customers1.cs" />
+    <Compile Include="Migrations\201507101141109_Customers1.Designer.cs">
+      <DependentUpon>201507101141109_Customers1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Baxter\Application.cs" />
     <Compile Include="Models\Baxter\ApplicationLog.cs" />
     <Compile Include="Models\Baxter\BackupModel.cs" />
     <Compile Include="Models\Baxter\BackupSettingsModel.cs" />
+    <Compile Include="Models\Baxter\Customer.cs" />
     <Compile Include="Models\Baxter\DriveModel.cs" />
     <Compile Include="Models\Baxter\ErrorModel.cs" />
     <Compile Include="Models\Baxter\FileModel.cs" />
@@ -835,6 +847,12 @@
     <EmbeddedResource Include="Migrations\201506261130575_applicationAcc.resx">
       <DependentUpon>201506261130575_applicationAcc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507101102566_Customers.resx">
+      <DependentUpon>201507101102566_Customers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201507101141109_Customers1.resx">
+      <DependentUpon>201507101141109_Customers1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Code\" />
@@ -859,6 +877,7 @@
     <TypeScriptCompile Include="Scripts\views\ApplicationView.ts" />
     <TypeScriptCompile Include="Scripts\views\ApplogView.ts" />
     <TypeScriptCompile Include="Scripts\views\BackupView.ts" />
+    <TypeScriptCompile Include="Scripts\views\CustomerView.ts" />
     <TypeScriptCompile Include="Scripts\views\DriveView.ts" />
     <TypeScriptCompile Include="Scripts\views\LogView.ts" />
     <TypeScriptCompile Include="Scripts\views\RoleView.ts" />

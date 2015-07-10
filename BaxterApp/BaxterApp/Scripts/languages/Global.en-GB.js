@@ -304,5 +304,6 @@ var Resources = {
     Language_Dutch: 'Dutch',
     Language_English: 'English',
     General_Application: 'Application',
+    General_Customers: 'Customers',
 	}
 };

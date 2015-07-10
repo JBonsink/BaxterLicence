@@ -37,6 +37,8 @@ namespace Baxter.Constants
         [LocalizedDescription("General_AppLog")]
         AppLog = 8,
         [LocalizedDescription("General_Application")]
-        Application = 9
-    }
+        Application = 9,
+        [LocalizedDescription("General_Customer")]
+        Customer=10,
+     }
 }

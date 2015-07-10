@@ -802,4 +802,31 @@
   <data name="General_Application" xml:space="preserve">
     <value>Application</value>
   </data>
+  <data name="Customer_City" xml:space="preserve">
+    <value>City:</value>
+  </data>
+  <data name="Customer_Country" xml:space="preserve">
+    <value>Country:</value>
+  </data>
+  <data name="Customer_GivenBy" xml:space="preserve">
+    <value>Given by:</value>
+  </data>
+  <data name="Customer_GivenDate" xml:space="preserve">
+    <value>Given date:</value>
+  </data>
+  <data name="Customer_LicensesCode" xml:space="preserve">
+    <value>LicensesCode:</value>
+  </data>
+  <data name="Customer_LicensesValid" xml:space="preserve">
+    <value>Licenses valid until:</value>
+  </data>
+  <data name="Customer_RequestedBy" xml:space="preserve">
+    <value>Requested by:</value>
+  </data>
+  <data name="General_Customer" xml:space="preserve">
+    <value>Customer name:</value>
+  </data>
+  <data name="General_Customers" xml:space="preserve">
+    <value>Customers</value>
+  </data>
 </root>

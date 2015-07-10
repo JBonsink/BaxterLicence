@@ -38,6 +38,18 @@ declare module Baxter.Models {
 		NetworkUsername: string;
 		NetworkPassword: string;
 	}
+	interface Customer {
+		ID: number;
+		CustomerName: string;
+		Country: string;
+		City: string;
+		LicensesCode: string;
+		LicensesValidUntil: string;
+		GivenBy: string;
+		GivenDate: string;
+		AskedBy: string;
+		RequestedBy: string;
+	}
 	interface Drive {
 		Name: string;
 		VolumeLabel: string;

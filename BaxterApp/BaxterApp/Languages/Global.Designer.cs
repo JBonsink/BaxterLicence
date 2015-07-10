@@ -430,6 +430,69 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to City:.
+        /// </summary>
+        public static string Customer_City {
+            get {
+                return ResourceManager.GetString("Customer_City", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Country:.
+        /// </summary>
+        public static string Customer_Country {
+            get {
+                return ResourceManager.GetString("Customer_Country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given by:.
+        /// </summary>
+        public static string Customer_GivenBy {
+            get {
+                return ResourceManager.GetString("Customer_GivenBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Given date:.
+        /// </summary>
+        public static string Customer_GivenDate {
+            get {
+                return ResourceManager.GetString("Customer_GivenDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to LicensesCode:.
+        /// </summary>
+        public static string Customer_LicensesCode {
+            get {
+                return ResourceManager.GetString("Customer_LicensesCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Licenses valid until:.
+        /// </summary>
+        public static string Customer_LicensesValid {
+            get {
+                return ResourceManager.GetString("Customer_LicensesValid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Requested by:.
+        /// </summary>
+        public static string Customer_RequestedBy {
+            get {
+                return ResourceManager.GetString("Customer_RequestedBy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Friday.
         /// </summary>
         public static string Day_Friday {
@@ -813,6 +876,24 @@ namespace Resources {
         public static string General_Create {
             get {
                 return ResourceManager.GetString("General_Create", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customer name:.
+        /// </summary>
+        public static string General_Customer {
+            get {
+                return ResourceManager.GetString("General_Customer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Customers.
+        /// </summary>
+        public static string General_Customers {
+            get {
+                return ResourceManager.GetString("General_Customers", resourceCulture);
             }
         }
         

@@ -230,5 +230,6 @@
     Language_Dutch: string;
     Language_English: string;
     General_Application: string;
+    General_Customers: string;
 	}
 }

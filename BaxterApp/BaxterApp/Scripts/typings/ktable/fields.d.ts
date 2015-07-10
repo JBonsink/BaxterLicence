@@ -38,6 +38,18 @@ declare module Baxter.Fields {
 		NetworkUsername: kTable.Field<Baxter.Models.BackupSettings>;
 		NetworkPassword: kTable.Field<Baxter.Models.BackupSettings>;
 	}
+	interface Customer {
+		ID: kTable.Field<Baxter.Models.Customer>;
+		CustomerName: kTable.Field<Baxter.Models.Customer>;
+		Country: kTable.Field<Baxter.Models.Customer>;
+		City: kTable.Field<Baxter.Models.Customer>;
+		LicensesCode: kTable.Field<Baxter.Models.Customer>;
+		LicensesValidUntil: kTable.Field<Baxter.Models.Customer>;
+		GivenBy: kTable.Field<Baxter.Models.Customer>;
+		GivenDate: kTable.Field<Baxter.Models.Customer>;
+		AskedBy: kTable.Field<Baxter.Models.Customer>;
+		RequestedBy: kTable.Field<Baxter.Models.Customer>;
+	}
 	interface Drive {
 		Name: kTable.Field<Baxter.Models.Drive>;
 		VolumeLabel: kTable.Field<Baxter.Models.Drive>;

@@ -22,14 +22,22 @@
                 <a href="@Url.Action("Index", "Application")"><i class="fa fa-coffee"></i> @Resources.Global.General_Application</a>
             </li>
         }
+        if (true)
+        {
+            <li>
+                <a href="@Url.Action("Index", "Customer")"><i class="fa fa-group"></i> @Resources.Global.General_Customers</a>
+            </li>
+        }
+
+
         <li data-toggle="collapse" data-target="#users" class="collapsed active">
             <a href="#"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users<span class="arrow"></span></a>
         </li>
-        <ul class="sub-menu collapse" id="users">            
+        <ul class="sub-menu collapse" id="users">
             @if (ViewBag.ViewUser)
             {
                 <li><a href="@Url.Action("Index", "User")"><i class="glyphicon glyphicon-user"></i> @Resources.Global.General_Users</a></li>
-            }            
+            }
             @if (ViewBag.ViewRole)
             {
                 <li><a href="@Url.Action("Index", "Role")"><i class="glyphicon glyphicon-education"></i> @Resources.Global.General_Roles</a></li>
@@ -37,7 +45,7 @@
             @if (ViewBag.ViewLog)
             {
                 <li><a href="@Url.Action("Index", "Log")"><i class="fa fa-align-justify"></i> @Resources.Global.General_Logs</a></li>
-            }            
+            }
         </ul>
     }
     @if (ViewBag.ViewMaintenance)

@@ -164,3 +164,5 @@ D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\obj\Debug\Baxter.pdb
 D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\bin\Baxter.pdb
 D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\bin\nl-NL\Baxter.resources.dll
 D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\obj\Debug\Baxter.csprojResolveAssemblyReference.cache
+D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\obj\Debug\Baxter.Migrations.Customers.resources
+D:\GitHub\BaxterLicence\BaxterApp\BaxterApp\obj\Debug\Baxter.Migrations.Customers1.resources
